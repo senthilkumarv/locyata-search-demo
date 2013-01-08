@@ -54,9 +54,6 @@ NSMutableArray *_files;
             Note *note = [[Note alloc] initWithEntity:[NSEntityDescription entityForName:@"Note" inManagedObjectContext:self.managedObjectContext] insertIntoManagedObjectContext:managedObjectContext];
             note.title = url.lastPathComponent;
             note.content = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error: &error];
-            if (error) {
-                NSLog(@"Error in reading file: %@", error);
-            }
             [note saveNote];
             [_files addObject:url];
         }
