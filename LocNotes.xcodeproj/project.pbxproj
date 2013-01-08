@@ -432,7 +432,7 @@
 			};
 			name = Debug;
 		};
-		1D6058950D05DD3E006BFB54 /* Release template */ = {
+		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -452,95 +452,7 @@
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = armv7;
 			};
-			name = "Release template";
-		};
-		8325D9DF11C9CAF600D83136 /* Ad Hoc */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				BUNDLE_DISPLAY_NAME_SUFFIX = "ß";
-				BUNDLE_ID_SUFFIX = .adhoc;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chris Miles";
-				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lstdc++",
-				);
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3C7CC055-AF61-485D-B448-65D1F3C85930";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = "Ad Hoc";
-		};
-		8325D9E011C9CAF600D83136 /* Ad Hoc */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"${PROJECT_DIR}/Frameworks\"";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = LocNotes_Prefix.pch;
-				INFOPLIST_FILE = "LocNotes-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-framework",
-					LocaytaSearch,
-				);
-				PRODUCT_NAME = LocNotes1;
-				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = armv7;
-			};
-			name = "Ad Hoc";
-		};
-		832EF6F3124745AB00FD8A64 /* App Store Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Locayta Limited";
-				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lstdc++",
-				);
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "03B04C56-8129-4658-8014-3FB8F013739D";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = "App Store Release";
-		};
-		832EF6F4124745AB00FD8A64 /* App Store Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"${PROJECT_DIR}/Frameworks\"";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = LocNotes_Prefix.pch;
-				INFOPLIST_FILE = "LocNotes-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-framework",
-					LocaytaSearch,
-				);
-				PRODUCT_NAME = LocNotes1;
-				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = armv7;
-			};
-			name = "App Store Release";
+			name = Release;
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -563,7 +475,7 @@
 			};
 			name = Debug;
 		};
-		C01FCF5008A954540054247B /* Release template */ = {
+		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
@@ -580,7 +492,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = "Release template";
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -589,23 +501,19 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
-				8325D9E011C9CAF600D83136 /* Ad Hoc */,
-				832EF6F4124745AB00FD8A64 /* App Store Release */,
-				1D6058950D05DD3E006BFB54 /* Release template */,
+				1D6058950D05DD3E006BFB54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "Release template";
+			defaultConfigurationName = Release;
 		};
 		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "LocNotes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
-				8325D9DF11C9CAF600D83136 /* Ad Hoc */,
-				832EF6F3124745AB00FD8A64 /* App Store Release */,
-				C01FCF5008A954540054247B /* Release template */,
+				C01FCF5008A954540054247B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "Release template";
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
