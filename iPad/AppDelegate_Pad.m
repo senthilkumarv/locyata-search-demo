@@ -25,7 +25,7 @@
 //  THE SOFTWARE.
 //
 
-#import <LocaytaSearch/LSLocaytaSearch.h>
+
 #import "AppDelegate_Pad.h"
 
 #import "EditNoteViewController.h"
@@ -40,37 +40,19 @@
 
 #pragma mark -
 #pragma mark Application delegate
-NSMutableArray *_files;
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-- (void) readAndIndex {
-    NSString *resourcePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingString:@"/html"];
-    NSLog(@"ResPath %@", resourcePath);
-    _files = [NSMutableArray new];
-    NSString *path = [[NSString stringWithFormat:@"file://%@", resourcePath] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSDirectoryEnumerator *enumerator = [[NSFileManager defaultManager] enumeratorAtURL:[NSURL URLWithString:path] includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsHiddenFiles errorHandler: nil];
-    NSError *error;
-    for (NSURL *url in enumerator) {
-        if ([[url pathExtension] isEqualToString:@"xhtml"]){
-            Note *note = [[Note alloc] initWithEntity:[NSEntityDescription entityForName:@"Note" inManagedObjectContext:self.managedObjectContext] insertIntoManagedObjectContext:managedObjectContext];
-            note.title = url.lastPathComponent;
-            note.content = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error: &error];
-            [note saveNote];
-            [_files addObject:url];
-        }
-    }
-}
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-	
-	[self setUpSearchDatabase];
+    [self setUpSearchDatabase];
 
-	self.enableAutoSpellCorrection = YES;
+    self.enableAutoSpellCorrection = YES;
+
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Note"];
     NSError *error;
     NSArray *array = [self.managedObjectContext executeFetchRequest:request error:&error];
     NSLog(@"ArrCOunt: %d", [array count]);
     if ([array count] == 0) {
         [self readAndIndex];
-     }
+    }
 
     // Select the first available note by default. Or create a new note if none exist.
     NSFetchedResultsController *noteFetchedResultsController = [self.notesBrowserTableViewController fetchedResultsControllerForNoteWithDelegate:nil];

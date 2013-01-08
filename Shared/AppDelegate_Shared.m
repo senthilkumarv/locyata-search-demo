@@ -30,6 +30,8 @@
 #import "AppDelegate_Shared.h"
 #import "SearchDatabaseRequester.h"
 #import "SearchDatabaseUpdater.h"
+#import "Note.h"
+#import "Note+Management.h"
 
 
 @implementation AppDelegate_Shared
@@ -39,6 +41,26 @@
 @synthesize searchDatabaseUpdater;
 
 @synthesize window;
+
+NSMutableArray *_files;
+
+- (void) readAndIndex {
+    NSString *resourcePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingString:@"/html"];
+    NSLog(@"ResPath %@", resourcePath);
+    _files = [NSMutableArray new];
+    NSString *path = [[NSString stringWithFormat:@"file://%@", resourcePath] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSDirectoryEnumerator *enumerator = [[NSFileManager defaultManager] enumeratorAtURL:[NSURL URLWithString:path] includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsHiddenFiles errorHandler: nil];
+    NSError *error;
+    for (NSURL *url in enumerator) {
+        if ([[url pathExtension] isEqualToString:@"xhtml"]){
+            Note *note = [[Note alloc] initWithEntity:[NSEntityDescription entityForName:@"Note" inManagedObjectContext:self.managedObjectContext] insertIntoManagedObjectContext:managedObjectContext];
+            note.title = url.lastPathComponent;
+            note.content = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error: &error];
+            [note saveNote];
+            [_files addObject:url];
+        }
+    }
+}
 
 + (AppDelegate_Shared *)sharedAppDelegate {
 	AppDelegate_Shared *appDelegate = [[UIApplication sharedApplication] delegate];
@@ -75,7 +97,6 @@
 	self.searchDatabaseRequester = newSearchDatabaseRequester;
 	[searchDatabaseRequester release];
 }
-
 
 /**
  applicationWillTerminate: saves changes in the application's managed object context before the application terminates.

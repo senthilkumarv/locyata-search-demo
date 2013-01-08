@@ -39,8 +39,16 @@
 	[self setUpSearchDatabase];
 	
 	self.enableAutoSpellCorrection = YES;
-	
-	[window addSubview:self.mainNavigationController.view];
+
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Note"];
+    NSError *error;
+    NSArray *array = [self.managedObjectContext executeFetchRequest:request error:&error];
+    NSLog(@"ArrCOunt: %d", [array count]);
+    if ([array count] == 0) {
+        [self readAndIndex];
+    }
+
+    [window addSubview:self.mainNavigationController.view];
 	
     [window makeKeyAndVisible];
 	

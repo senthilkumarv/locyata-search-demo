@@ -56,6 +56,6 @@
 - (NSString *)searchDatabasePath;
 - (void)setUpSearchDatabase;
 - (NSString *)applicationDocumentsDirectory;
-
+- (void) readAndIndex;
 @end
 
