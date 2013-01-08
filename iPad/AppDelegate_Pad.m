@@ -25,6 +25,7 @@
 //  THE SOFTWARE.
 //
 
+#import <LocaytaSearch/LSLocaytaSearch.h>
 #import "AppDelegate_Pad.h"
 
 #import "EditNoteViewController.h"
@@ -41,12 +42,8 @@
 #pragma mark Application delegate
 NSMutableArray *_files;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-	
-	[self setUpSearchDatabase];
-
-	self.enableAutoSpellCorrection = YES;
-    /*NSString *resourcePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingString:@"/html"];
+- (void) readAndIndex {
+    NSString *resourcePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingString:@"/html"];
     NSLog(@"ResPath %@", resourcePath);
     _files = [NSMutableArray new];
     NSString *path = [[NSString stringWithFormat:@"file://%@", resourcePath] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -60,11 +57,21 @@ NSMutableArray *_files;
             if (error) {
                 NSLog(@"Error in reading file: %@", error);
             }
-            //[note saveNote];
+            [note saveNote];
             [_files addObject:url];
         }
-    } */
+    }
+}
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+	
+	[self setUpSearchDatabase];
 
+	self.enableAutoSpellCorrection = YES;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Note"];
+    NSArray *array = [self.managedObjectContext executeFetchRequest:request error:nil];
+    if ([array count] < 1) {
+        [self readAndIndex];
+     }
 
     // Select the first available note by default. Or create a new note if none exist.
     NSFetchedResultsController *noteFetchedResultsController = [self.notesBrowserTableViewController fetchedResultsControllerForNoteWithDelegate:nil];
