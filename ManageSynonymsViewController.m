@@ -60,13 +60,12 @@
 	}
 	
 	[self saveSynonymsToSearchDatabase];
-	
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)cancelAction {
 	[self endCellTextEditing];
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)addRowAction {

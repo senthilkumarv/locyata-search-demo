@@ -47,7 +47,7 @@
 @synthesize searchSummaryView;
 
 - (void)settingsDoneAction {
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)settingsButtonAction {
@@ -65,14 +65,13 @@
 	[flexibleBarButtonItem release];
 	[doneBarButtonItem release];
 	[toolbar release];
-	
-	[self presentModalViewController:settingsTableViewController animated:YES];
+	[self presentViewController:settingsTableViewController animated:YES completion:nil];
 	[settingsTableViewController release];
 }
 
 - (void)infoButtonAction {
 	InfoViewController *infoViewController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
-	[self presentModalViewController:infoViewController animated:YES];
+	[self presentViewController:infoViewController animated:YES completion:nil];
 	[infoViewController release];
 }
 
@@ -313,7 +312,7 @@
 		versionLabel.font = [UIFont systemFontOfSize:11.0];
 		versionLabel.textColor = [UIColor lightTextColor];
 		versionLabel.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.0];	// transparent
-		versionLabel.textAlignment = UITextAlignmentCenter;
+		versionLabel.textAlignment = NSTextAlignmentCenter;
 		versionLabel.shadowColor = [UIColor darkTextColor];
 		versionLabel.shadowOffset = CGSizeMake(0.0, -1.0);
 		versionLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;

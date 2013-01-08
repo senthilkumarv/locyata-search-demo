@@ -111,7 +111,7 @@
 - (void)locaytaSearchRequest:(LSLocaytaSearchRequest *)searchRequest didCompleteWithResult:(LSLocaytaSearchResult *)searchResult {
 	DLog(@"searchResult: %@", searchResult);
 	
-	DLog(@" * documentCount: %d", [searchRequest documentCount]);
+	DLog(@" * documentCount: %lld", [searchRequest documentCount]);
 	DLog(@" * requestedQueryString: \"%@\"", searchResult.requestedQueryString);
 	DLog(@" * wasAutoSpellCorrected: \"%@\"", (searchResult.wasAutoSpellCorrected ? @"YES" : @"NO"));
 	DLog(@" * correctedQueryString: \"%@\"", searchResult.correctedQueryString);

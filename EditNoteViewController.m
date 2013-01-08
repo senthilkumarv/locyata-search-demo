@@ -181,7 +181,7 @@
 	
 	InfoViewController *infoViewController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
 	infoViewController.modalPresentationStyle = UIModalPresentationFormSheet;
-	[self presentModalViewController:infoViewController animated:YES];
+    [self presentViewController:infoViewController animated:YES completion:nil];
 	[infoViewController release];
 }
 
@@ -446,7 +446,7 @@
 			
 			break;
 	}
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -479,7 +479,7 @@
 
 - (void)keyboardDidShow:(NSNotification *) notification {
 	// Correct the scroll area to take keyboard into account
-	CGRect keyboardBounds = [[[notification userInfo] objectForKey:UIKeyboardBoundsUserInfoKey] CGRectValue];
+	CGRect keyboardBounds = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
 	
 	// Resize text view
 	CGRect frame = self.contentTextView.frame;

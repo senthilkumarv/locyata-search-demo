@@ -43,7 +43,7 @@
 @synthesize websiteCell;
 
 - (IBAction)doneButtonAction {
-	[self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

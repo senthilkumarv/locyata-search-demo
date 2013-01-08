@@ -57,8 +57,6 @@
 		83CC7E1F12263F0F00FD0354 /* EditSynonymCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83CC7E1E12263F0F00FD0354 /* EditSynonymCell.xib */; };
 		83CC7E2212263F1C00FD0354 /* EditSynonymCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CC7E2112263F1C00FD0354 /* EditSynonymCell.m */; };
 		914FF3EC1696FB510037D21D /* LocaytaSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 914FF3EB1696FB510037D21D /* LocaytaSearch.framework */; };
-		914FF3EE1696FB5C0037D21D /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 914FF3ED1696FB5C0037D21D /* libstdc++.6.0.9.dylib */; };
-		BF020E279C25D9D8B6D0A66B /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF02046A6AE14A8D0716232E /* libstdc++.6.0.9.dylib */; };
 		BF020F0FBEFD7EE63B21A277 /* html in Resources */ = {isa = PBXBuildFile; fileRef = BF020C077A3A8AA89F020B73 /* html */; };
 /* End PBXBuildFile section */
 
@@ -133,7 +131,6 @@
 		83CC7E2112263F1C00FD0354 /* EditSynonymCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditSynonymCell.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* LocNotes-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LocNotes-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		914FF3EB1696FB510037D21D /* LocaytaSearch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocaytaSearch.framework; path = ../../Downloads/LocaytaSearch.framework; sourceTree = "<group>"; };
-		914FF3ED1696FB5C0037D21D /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		BF02046A6AE14A8D0716232E /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "../../../../Applications/Xcode46-DP3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/lib/libstdc++.6.0.9.dylib"; sourceTree = "<group>"; };
 		BF020C077A3A8AA89F020B73 /* html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,14 +140,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				914FF3EE1696FB5C0037D21D /* libstdc++.6.0.9.dylib in Frameworks */,
 				914FF3EC1696FB510037D21D /* LocaytaSearch.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				28EEBFDD1118E19E00187D67 /* CoreData.framework in Frameworks */,
 				8396F91E11EEFD6F00F1DF5D /* MessageUI.framework in Frameworks */,
-				BF020E279C25D9D8B6D0A66B /* libstdc++.6.0.9.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +220,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				914FF3ED1696FB5C0037D21D /* libstdc++.6.0.9.dylib */,
 				83398D9E1263011000EF40B1 /* LICENSE */,
 				83398D9F1263011000EF40B1 /* README */,
 				83CC7CAD1225EF1A00FD0354 /* Images */,
@@ -420,19 +414,21 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(HOME)/Library/Frameworks\"",
-					"\"$(SRCROOT)/../../Downloads\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "\"${PROJECT_DIR}/Frameworks\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LocNotes_Prefix.pch;
 				INFOPLIST_FILE = "LocNotes-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				LIBRARY_SEARCH_PATHS = "\"${PROJECT_DIR}/../../../../Applications/Xcode46-DP3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/lib\"/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					LocaytaSearch,
+				);
 				PRODUCT_NAME = LocNotes1;
+				VALID_ARCHS = armv7;
 			};
 			name = Debug;
 		};
@@ -440,20 +436,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = "~/src/locayta/locayta-svn/projects/prototypes/iphone/LocNotes/trunk/LocNotes/Entitlements.plist";
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(HOME)/Library/Frameworks\"",
-					"\"$(SRCROOT)/../../Downloads\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "\"${PROJECT_DIR}/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LocNotes_Prefix.pch;
 				INFOPLIST_FILE = "LocNotes-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				LIBRARY_SEARCH_PATHS = "\"${PROJECT_DIR}/../../../../Applications/Xcode46-DP3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/lib\"/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					LocaytaSearch,
+				);
 				PRODUCT_NAME = LocNotes1;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = armv7;
 			};
 			name = "Release template";
 		};
@@ -463,12 +460,11 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUNDLE_DISPLAY_NAME_SUFFIX = "ß";
 				BUNDLE_ID_SUFFIX = .adhoc;
-				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chris Miles";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -485,20 +481,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = "~/src/locayta/locayta-svn/projects/prototypes/iphone/LocNotes/trunk/LocNotes/Entitlements.plist";
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(HOME)/Library/Frameworks\"",
-					"\"$(SRCROOT)/../../Downloads\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "\"${PROJECT_DIR}/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LocNotes_Prefix.pch;
 				INFOPLIST_FILE = "LocNotes-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				LIBRARY_SEARCH_PATHS = "\"${PROJECT_DIR}/../../../../Applications/Xcode46-DP3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/lib\"/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					LocaytaSearch,
+				);
 				PRODUCT_NAME = LocNotes1;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = armv7;
 			};
 			name = "Ad Hoc";
 		};
@@ -510,7 +507,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -527,20 +524,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = "~/src/locayta/locayta-svn/projects/prototypes/iphone/LocNotes/trunk/LocNotes/Entitlements.plist";
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(HOME)/Library/Frameworks\"",
-					"\"$(SRCROOT)/../../Downloads\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "\"${PROJECT_DIR}/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LocNotes_Prefix.pch;
 				INFOPLIST_FILE = "LocNotes-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				LIBRARY_SEARCH_PATHS = "\"${PROJECT_DIR}/../../../../Applications/Xcode46-DP3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/lib\"/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					LocaytaSearch,
+				);
 				PRODUCT_NAME = LocNotes1;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = armv7;
 			};
 			name = "App Store Release";
 		};
@@ -555,7 +553,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lstdc++",
@@ -573,7 +571,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = (
 					"-ObjC",
