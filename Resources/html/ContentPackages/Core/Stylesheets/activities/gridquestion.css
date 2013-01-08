@@ -1,0 +1,113 @@
+/*
+
+Copyright c 2012 Xyleme, Inc., 2060 Broadway, Suite 260, Boulder, C0 80302 USA.
+All rights reserved.
+
+This file and related documentation are protected by copyright and
+are distributed under licenses regarding their use, copying, distribution,
+and decompilation. No part of this product or related documentation may
+be reproduced or transmitted in any form or by any means, electronic or
+mechanical, for any purpose, without the express written permission of
+Xyleme, Inc.
+
+*/
+
+/*--------------------------------*/
+/* WebGridQuestion begin ----------*/
+DIV.WebGridQuestion {
+	width: 500px;
+	position:absolute;
+}
+DIV.WebGridQuestion OL {
+	padding-bottom: 20px;
+	list-style-type: none;
+}
+DIV.WebGridQuestion OL LI {
+	margin-left: -40px;
+}
+DIV.WebGridQuestion DIV.ListType LI {
+	margin-left: 0px;
+}
+DIV.WebGridQuestion DIV.Headers{
+	padding: 0px 0px 0px 0px;
+	text-align: center;
+}
+DIV.WebGridQuestion DIV.Headers DIV.Usual {
+	clear: both;
+}
+DIV.WebGridQuestion DIV.Headers DIV.Col1 {
+	float: left;
+	width: 268px;
+	vertical-align: middle;
+}
+DIV.WebGridQuestion DIV.Option {
+	float:left;
+	width:100%;
+	vertical-align: middle;
+}
+DIV.WebGridQuestion DIV.Light {
+	float:left;
+	width:100%;
+	vertical-align: middle;
+}
+DIV.WebGridQuestion DIV.Dark {
+	width:100%;
+	float:left;
+	vertical-align: middle;
+}
+DIV.WebGridQuestion DIV.Option DIV.Col1 {
+	float: left;
+	width: 29px;
+        vertical-align: middle;
+}
+DIV.WebGridQuestion DIV.Div2InnerWrapper {
+	vertical-align: middle;
+	height:100%; 
+}
+
+DIV.WebGridQuestion TD.DivGridAmswer{
+	width:30px; 
+	height:30px;
+	vertical-align: middle;
+	text-align:center;
+	background-image: url(../Transforms/media/gridSqBlack.png);
+	background-repeat:no-repeat;
+}
+
+DIV.WebGridQuestion TD.DivGridInput{
+	width: 37px; 
+	height: 29px;        
+	text-align: center;
+	vertical-align: middle;
+	background-image: url(../Transforms/media/gridCircleBlack.png);
+	background-position: center;
+	background-repeat:no-repeat;
+}
+
+DIV.WebGridQuestion TD.DivGridInput:HOVER{
+    background-image: url(../Transforms/media/gridCircleYellow.png);
+}
+
+DIV.WebGridQuestion DIV.Div1InnerWrapper{
+	width:238px; 
+	height:100%;
+	float:left; 
+	text-align:left; 
+}
+DIV.WebGridQuestion DIV.Option DIV.Col2 {
+	margin-left: 80px;
+	width: 510px;
+	color: #000031;
+}
+DIV.WebGridQuestion DIV.Option DIV.Col2 DIV.Col2Light {
+    background-color: #efefef;
+}
+DIV.WebGridQuestion DIV.Option DIV.Col2 DIV.Col2Dark {
+    background-color: #e7e7e7;
+}
+DIV.WebGridQuestion DIV.Option INPUT {
+    text-align: center;
+    vertical-align: middle;
+}
+/* WebGridQuestion end ----------*/
+/*------------------------------*/

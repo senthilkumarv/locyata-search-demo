@@ -1,0 +1,140 @@
+/*
+
+Copyright c 2012 Xyleme, Inc., 2060 Broadway, Suite 260, Boulder, C0 80302 USA.
+All rights reserved.
+
+This file and related documentation are protected by copyright and
+are distributed under licenses regarding their use, copying, distribution,
+and decompilation. No part of this product or related documentation may
+be reproduced or transmitted in any form or by any means, electronic or
+mechanical, for any purpose, without the express written permission of
+Xyleme, Inc.
+
+*/
+
+/*-------------------------------------*/
+/* WebMatchingActivity begin ----------*/
+
+DIV.WebMatchingActivity {
+	position: relative;
+}
+DIV.WebMatchingActivity OL {
+	list-style-type: none;
+	padding-bottom: 20px;
+}
+DIV.WebMatchingActivity OL LI {
+	margin-left: -40px;
+}
+DIV.WebMatchingActivity DIV.ListType LI {
+	margin-left: 0px;
+}
+DIV.MatchingActivity DIV.QuestionStem {
+	width: 590px;
+}
+TABLE.MaTable {
+	width: 631px;
+	border-spacing: 3px;
+	empty-cells: show;
+	font-size: 18px;
+	font-family: inherit;
+	margin-left: -3px;
+}
+TABLE.MaTable TD {
+	padding: 4px;
+	color: inherit;
+	height: 30px;	
+}
+TD.MaDistractorCellDark {
+	background-color: #99d5ef;
+	border-bottom: 1px solid #ffffff;
+	vertical-align: top;	
+}
+TD.MaDistractor {
+	background-color: #cceaf5;
+	border-bottom: 1px solid #ffffff;
+	vertical-align: top;	
+}
+TD.MaDistractor DIV.LetterLabel {
+	font-weight: bold;
+	padding: 0px 4px 0px 4px;
+	float: left;
+}
+TD.MaDistractorCellDark DIV.LetterLabel {
+	font-weight: bold;
+	padding: 0px 4px 0px 4px;
+	float: left;
+}
+TD.MaDistractorCellDark DIV.DistractorContent {
+	float: left;
+}
+TD.MaDistractor DIV.DistractorContent {
+	float: left;
+}
+TD.MaDistractor DIV.DistractorContent DIV.Wysiwyg {
+	width: 100%;
+	padding-left: 1px; /* important for aligment in IE */
+}
+TD.MaDistractorCellDark DIV.DistractorContent DIV.Wysiwyg {
+	width: 100%;
+	padding-left: 1px; /* important for aligment in IE */
+}
+TD.MaMatchLabel {
+	background-color: #efefef;
+	border-bottom: 1px solid #ffffff;
+	vertical-align: top;
+	width: 32px;
+}
+TD.MaMatchLabelCellDark {
+    background-color: #e7e7e7;
+	border-bottom: 1px solid #ffffff;
+	vertical-align: top;
+	width: 32px;
+}
+TD.MaMatchLabel IMG {
+	visibility: hidden;
+	display: inline;
+}
+TD.MaMatchLabelCellDark IMG {
+	visibility: hidden;
+	display: inline;
+}
+TD.MaMatch {
+	background-color: #CCEAF5;
+	border-bottom: 1px solid #ffffff;	
+}
+TD.MaMatchCellDark {
+    background-color: #99D5EF;
+	border-bottom: 1px solid #ffffff;	
+}
+TD.MaMatch DIV.MatchSelect {
+	float: left;
+}
+TD.MaMatch SELECT {
+	margin-right: 10px;	
+	color: #000031;
+}
+TD.MaMatch DIV.MatchContent {
+	float: left;
+}
+TD.MaMatchCellDark DIV.MatchSelect {
+	float: left;
+}
+TD.MaMatchCellDark SELECT {
+	margin-right: 10px;	
+	color: #000031;
+}
+TD.MaMatchCellDark DIV.MatchContent {
+	float: left;
+}
+DIV.WebMatchingActivity DIV.ThisIsCorrResponse {
+	color: #18386b;
+}
+DIV.WebMatchingActivity DIV.QuestionFeedback DIV.Col2 {
+	width: 80%;
+}
+.hover{
+	background-color: #b4c4de !important;
+}
+
+/* WebMatchingActivity end ----------*/
+/*-----------------------------------*/

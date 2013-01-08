@@ -36,7 +36,6 @@
 		832EF16E123F1D3200FD8A64 /* Defaultipad-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 832EF16D123F1D3200FD8A64 /* Defaultipad-Landscape.png */; };
 		83398DA01263011000EF40B1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 83398D9E1263011000EF40B1 /* LICENSE */; };
 		83398DA11263011000EF40B1 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 83398D9F1263011000EF40B1 /* README */; };
-		8388D7E9121254ED00B4FAAB /* LocaytaSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8388D7E8121254ED00B4FAAB /* LocaytaSearch.framework */; };
 		8396F63D11EDB20100F1DF5D /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8396F63B11EDB20100F1DF5D /* InfoViewController.m */; };
 		8396F63E11EDB20100F1DF5D /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8396F63C11EDB20100F1DF5D /* InfoViewController.xib */; };
 		8396F8C911EEF8FC00F1DF5D /* ShareViewTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8396F8C711EEF8FC00F1DF5D /* ShareViewTableController.m */; };
@@ -57,6 +56,10 @@
 		83CC7D31122602DB00FD0354 /* ManageSynonymsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83CC7D2F122602DB00FD0354 /* ManageSynonymsViewController.xib */; };
 		83CC7E1F12263F0F00FD0354 /* EditSynonymCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83CC7E1E12263F0F00FD0354 /* EditSynonymCell.xib */; };
 		83CC7E2212263F1C00FD0354 /* EditSynonymCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CC7E2112263F1C00FD0354 /* EditSynonymCell.m */; };
+		914FF3EC1696FB510037D21D /* LocaytaSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 914FF3EB1696FB510037D21D /* LocaytaSearch.framework */; };
+		914FF3EE1696FB5C0037D21D /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 914FF3ED1696FB5C0037D21D /* libstdc++.6.0.9.dylib */; };
+		BF020E279C25D9D8B6D0A66B /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF02046A6AE14A8D0716232E /* libstdc++.6.0.9.dylib */; };
+		BF020F0FBEFD7EE63B21A277 /* html in Resources */ = {isa = PBXBuildFile; fileRef = BF020C077A3A8AA89F020B73 /* html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,7 +100,6 @@
 		832EF16D123F1D3200FD8A64 /* Defaultipad-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Defaultipad-Landscape.png"; path = "Images/Defaultipad-Landscape.png"; sourceTree = "<group>"; };
 		83398D9E1263011000EF40B1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		83398D9F1263011000EF40B1 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
-		8388D7E8121254ED00B4FAAB /* LocaytaSearch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocaytaSearch.framework; path = /Users/chris/Library/Frameworks/LocaytaSearch.framework; sourceTree = "<absolute>"; };
 		8396F63A11EDB20100F1DF5D /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		8396F63B11EDB20100F1DF5D /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		8396F63C11EDB20100F1DF5D /* InfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
@@ -130,6 +132,10 @@
 		83CC7E2012263F1C00FD0354 /* EditSynonymCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditSynonymCell.h; sourceTree = "<group>"; };
 		83CC7E2112263F1C00FD0354 /* EditSynonymCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditSynonymCell.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* LocNotes-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LocNotes-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		914FF3EB1696FB510037D21D /* LocaytaSearch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocaytaSearch.framework; path = ../../Downloads/LocaytaSearch.framework; sourceTree = "<group>"; };
+		914FF3ED1696FB5C0037D21D /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
+		BF02046A6AE14A8D0716232E /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "../../../../Applications/Xcode46-DP3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/lib/libstdc++.6.0.9.dylib"; sourceTree = "<group>"; };
+		BF020C077A3A8AA89F020B73 /* html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,12 +143,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				914FF3EE1696FB5C0037D21D /* libstdc++.6.0.9.dylib in Frameworks */,
+				914FF3EC1696FB510037D21D /* LocaytaSearch.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				28EEBFDD1118E19E00187D67 /* CoreData.framework in Frameworks */,
 				8396F91E11EEFD6F00F1DF5D /* MessageUI.framework in Frameworks */,
-				8388D7E9121254ED00B4FAAB /* LocaytaSearch.framework in Frameworks */,
+				BF020E279C25D9D8B6D0A66B /* libstdc++.6.0.9.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +225,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				914FF3ED1696FB5C0037D21D /* libstdc++.6.0.9.dylib */,
 				83398D9E1263011000EF40B1 /* LICENSE */,
 				83398D9F1263011000EF40B1 /* README */,
 				83CC7CAD1225EF1A00FD0354 /* Images */,
@@ -226,6 +235,7 @@
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				BF02082F8B5812B6B5EF12ED /* Resources */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -257,7 +267,8 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				28EEBFDC1118E19E00187D67 /* CoreData.framework */,
-				8388D7E8121254ED00B4FAAB /* LocaytaSearch.framework */,
+				914FF3EB1696FB510037D21D /* LocaytaSearch.framework */,
+				BF02046A6AE14A8D0716232E /* libstdc++.6.0.9.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -280,6 +291,14 @@
 				832EF0A8123EFC0800FD8A64 /* iTunesArtwork */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		BF02082F8B5812B6B5EF12ED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BF020C077A3A8AA89F020B73 /* html */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +380,7 @@
 				832EF16E123F1D3200FD8A64 /* Defaultipad-Landscape.png in Resources */,
 				83398DA01263011000EF40B1 /* LICENSE in Resources */,
 				83398DA11263011000EF40B1 /* README in Resources */,
+				BF020F0FBEFD7EE63B21A277 /* html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,12 +423,15 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(HOME)/Library/Frameworks\"",
+					"\"$(SRCROOT)/../../Downloads\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LocNotes_Prefix.pch;
 				INFOPLIST_FILE = "LocNotes-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = "\"${PROJECT_DIR}/../../../../Applications/Xcode46-DP3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/lib\"/**";
 				PRODUCT_NAME = LocNotes1;
 			};
 			name = Debug;
@@ -422,10 +445,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(HOME)/Library/Frameworks\"",
+					"\"$(SRCROOT)/../../Downloads\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LocNotes_Prefix.pch;
 				INFOPLIST_FILE = "LocNotes-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = "\"${PROJECT_DIR}/../../../../Applications/Xcode46-DP3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/lib\"/**";
 				PRODUCT_NAME = LocNotes1;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -442,7 +468,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -464,10 +490,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(HOME)/Library/Frameworks\"",
+					"\"$(SRCROOT)/../../Downloads\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LocNotes_Prefix.pch;
 				INFOPLIST_FILE = "LocNotes-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = "\"${PROJECT_DIR}/../../../../Applications/Xcode46-DP3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/lib\"/**";
 				PRODUCT_NAME = LocNotes1;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -481,7 +510,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -503,10 +532,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(HOME)/Library/Frameworks\"",
+					"\"$(SRCROOT)/../../Downloads\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LocNotes_Prefix.pch;
 				INFOPLIST_FILE = "LocNotes-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = "\"${PROJECT_DIR}/../../../../Applications/Xcode46-DP3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/lib\"/**";
 				PRODUCT_NAME = LocNotes1;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -523,7 +555,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lstdc++",
@@ -541,7 +573,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = (
 					"-ObjC",

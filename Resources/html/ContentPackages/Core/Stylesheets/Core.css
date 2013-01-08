@@ -1,0 +1,2300 @@
+/*
+
+Copyright c 2012 Xyleme, Inc., 2060 Broadway, Suite 260, Boulder, C0 80302 USA.
+All rights reserved.
+
+This file and related documentation are protected by copyright and
+are distributed under licenses regarding their use, copying, distribution,
+and decompilation. No part of this product or related documentation may
+be reproduced or transmitted in any form or by any means, electronic or
+mechanical, for any purpose, without the express written permission of
+Xyleme, Inc.
+
+*/
+
+HTML {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+}
+
+TEXTAREA {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+}
+
+TABLE {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+}
+
+INPUT, SELECT, BUTTON {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+}
+
+INPUT[readonly] {
+        color: #686868;
+}       
+  
+BODY {
+	margin-top: 30px;
+	color: #000000; 
+	width: 600px;
+	text-align: left;
+	font-size: 12pt;
+	margin-left: 45px;
+}
+
+.nosidenotes {
+	margin-left: 0px;
+    width: auto;
+}
+.sidenotes {
+    margin-left: 145px;
+}
+.normal {
+    margin-left: 45px;
+}
+
+.PageType {
+}
+.Page {
+}
+DIV.PageType_Title {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 22px;
+	font-weight: bold;
+	margin-bottom: 15px;
+	position: relative;
+	/* left: -135px; */
+	color: #0088C2;
+}
+DIV.PageType_TitleCR {
+	color: #FFFFFF!important;
+}
+
+.wmIntro {
+	background: #ffffff url(../../media/Core/t_p_image1.png) right top no-repeat;
+	height: 429px;
+}
+.wmEdu {
+    background: #ffffff url(../../media/Core/e_o_bg_new.jpg) right top no-repeat;
+	height: 427px;
+}
+.wmQuest {
+    background: #ffffff url(../../media/Core/k_c_bg_new.png) right top no-repeat;
+	height: 250px;
+}
+.wmSummary {
+   background: #ffffff url(../../media/Core/summery_bg.png) right bottom no-repeat;
+}
+DIV.Name {
+	font-weight: bold;
+	margin-bottom: 10px;
+	font-size: 22px;
+	color: #0088C2;
+}	
+
+a.none {
+	display:block; 
+	width:100%; 
+	text-decoration:none;
+	color: inherit;
+	background-color: transparent;
+}
+
+/* =============================== */
+/* =============================== */
+
+/* due to the clippinng bug in IE */
+/* on negative margin block */
+/* just add also position: relative; */
+
+
+
+/*--------------------------*/
+/* 
+   @ContentBlock - defined as ContentBlockType
+
+   @QuestionBlock - defined as QuestionBlockType
+   @Paragraph - defined as ParagraphType
+	Title
+   	Note
+	Warning
+	KeyPoint
+	QuoteBlock
+	Code
+	@List - defined as ListType
+	@Table - defined as TableType
+	@Figure - defined as FigureType
+
+   Glossary
+
+   @MediaObjectType - defined as MediaObjectType
+
+   @EducationalObjective - defined as EducationalObjectiveType
+   StepGroup
+
+   RichText
+   Slide
+
+   -------
+   ActionGroup [Demo]
+*/
+
+/* Note to using the schema-type classes */
+/* =======================================
+  elements of defined schema-type (e.g. ParagraphType) use two CSS classes: 
+
+  - first is derived from the current element name (e.g. Paragraph => class='Paragraph')
+  - second is from the element schema-type (e.g. ParagraphType => class='ParagraphType')
+
+  - 'schema-type' class is common for all elements of given schema-type
+  - 'element' class' can localy overwrite the 'schema-type' class if required
+
+  special case applies for Title, where we have to use
+  parent name or parent schema-type to create the class name
+  it is due to the child selector bug of IE
+  we create following class names:
+  - Paragraph > Title => Title_Paragraph
+  - ParagraphType > Title => ParagraphType_Title
+
+*/
+
+/*----------------------------------*/
+/* ContentBlockType begin ----------*/
+
+
+.ContentBlockType {
+        width: 100%;
+        margin: 6px 0px 6px 0px;
+	text-align: left;
+}
+
+DIV.ContentBlockType_Title {
+	font-size: 16px;
+	font-weight: bold;
+	font-style: italic;
+	color: #999999;
+	background-color: inherit;
+	padding: 12px 0px 2px 0px;
+	position: relative;
+	/* left: -135px; */
+}
+
+/* ContentBlockType end ----------*/
+/*--------------------------------*/
+
+/*--------------------------------*/
+/* @ParagraphType begin ----------*/
+
+/* @ParagraphType classes:
+        Heading
+	Note
+	Warning
+	KeyPoint
+	Quote
+	Code
+	@List - defined as ListType
+	@Table - defined as TableType
+	@Figure - defined as FigureType
+*/
+
+.ParagraphType {
+	font-size: inherit;
+	font-weight: inherit;
+	font-style: inherit;
+	color: inherit;
+	background-color: transparent;
+	padding: 2px 0px 2px 0px;
+}
+DIV.ParagraphType_Heading {
+	font-size: inherit;
+	font-weight: bold;
+	font-style: inherit;
+	color: inherit;
+	background-color: inherit;
+	padding: 10px 0px 2px 0px;
+}
+DIV.ParagraphType DIV.Wysiwyg {
+	font-size: inherit;
+	font-weight: normal;
+	text-decoration: none;	
+	color: inherit;
+	background-color: transparent;
+	padding: 3px 0px 3px 0px;
+}
+DIV.Note {
+        border-top: 1px outset #aaaaaa;
+	border-bottom: 3px outset #aaaaaa;
+	border-left: 1px outset #aaaaaa;
+	border-right: 3px outset #aaaaaa;
+	margin:	3px 5px 3px 0px;
+	padding: 3px 2px 3px 16px;
+	width: 110px;
+	font-size: 80%;
+	font-style: normal;
+	color: inherit;
+	background-color: inherit;
+	position: absolute;
+	margin-left: -135px;
+}
+DIV.Note IMG {
+	float: left;
+	position: relative;
+	margin-left: -20px;
+	margin-top: -10px;
+	padding: 0px;
+}
+
+DIV.ParagraphType DIV SPAN.AreaIcon {
+       font-weight: bold;
+}
+/*DIV.ParagraphType DIV.Note DIV {
+       vertical-align: top;
+       padding: 5px 8px 5px 8px;
+       background-color: #dddddd;
+}*/
+DIV.ParagraphType DIV.Warning {
+	font-size: inherit;
+	font-style: italic;	
+	color: inherit;
+	background-color: inherit;
+	padding: 6px 0px 6px 0px;
+}
+DIV.ParagraphType DIV.Warning SPAN {
+	font-size: inherit;
+	font-weight: bold;
+	text-decoration: none;	
+	color: red;
+	background-color: inherit;
+}
+TABLE.PopupTable {
+	border-width: 1px;
+	border-spacing: 0px;
+	border-style: solid;
+	border-color: blue;
+	background-color: white;
+	cursor:default;
+}
+TD.PopupTitle {
+	background-color: blue; 
+	font-weight:bold;
+	color: white;
+}
+TD.PopupContent{
+    color: black;
+    padding: 10px;
+}
+TABLE.KeyPoint {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0px;
+	width: 80%;
+	border-top: 1px outset #aaaaaa;
+	border-bottom: 3px outset #aaaaaa;
+	border-left: 1px outset #aaaaaa;
+	border-right: 3px outset #aaaaaa;
+	border-spacing: 3px;
+}
+
+TABLE.KeyPoint TD.AreaIcon {
+       width: 45px;
+       vertical-align: top;
+       text-align: center;
+       font-weight: bold;
+	
+}
+TABLE.KeyPoint TD.AreaContent {
+       vertical-align: top;
+       padding: 5px 8px 5px 8px;
+       background-color: #dddddd;
+}
+
+TABLE.Caution {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0px;
+	width: 80%;
+	border-top: 1px outset #aaaaaa;
+	border-bottom: 3px outset #aaaaaa;
+	border-left: 1px outset #aaaaaa;
+	border-right: 3px outset #aaaaaa;
+	border-spacing: 3px;
+}
+
+TABLE.Caution TD.AreaIcon {
+       width: 32px;
+       vertical-align: top;
+       text-align: center;
+       font-weight: bold;
+	
+}
+TABLE.Caution TD.AreaContent {
+       vertical-align: top;
+       padding: 5px 8px 5px 8px;
+	   color: #DF1B4D;
+	   background-color: #dddddd;
+}
+
+TABLE.NoteBlock {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0px;
+	width: 80%;
+	border-top: 1px outset #aaaaaa;
+	border-bottom: 3px outset #aaaaaa;
+	border-left: 1px outset #aaaaaa;
+	border-right: 3px outset #aaaaaa;
+	border-spacing: 3px;
+}
+
+TABLE.NoteBlock TD.AreaIcon {
+       width: 45px;
+       vertical-align: top;
+       text-align: center;
+       font-weight: bold;
+}
+TABLE.NoteBlock TD.AreaContent {
+       vertical-align: top;
+       padding: 5px 8px 5px 8px;
+       background-color: #dddddd;
+}
+TABLE.Warning {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0px;
+	width: 80%;
+	border-top: 1px outset #aaaaaa;
+	border-bottom: 3px outset #aaaaaa;
+	border-left: 1px outset #aaaaaa;
+	border-right: 3px outset #aaaaaa;
+	border-spacing: 3px;
+}
+
+TABLE.Warning TD.AreaIcon {
+       width: 45px;
+       vertical-align: top;
+       text-align: center;
+       font-weight: bold;
+}
+TABLE.Warning TD.AreaContent {
+       vertical-align: top;
+       padding: 5px 8px 5px 8px;
+       background-color: #dddddd;
+}
+TABLE.CustomNote {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0px;
+	width: 80%;
+	border: 1px solid #627b91;
+	border-spacing: 0px;
+	border-radius: 5px;
+}
+
+TABLE.CustomNote TD.AreaIcon {
+       background-color: #9cd4eb;
+       width: 45px;
+       vertical-align: top;
+       text-align: center;
+       font-weight: bold;
+}
+TABLE.CustomNote TD.AreaContent {
+       vertical-align: top;
+       padding: 5px 8px 5px 8px;
+}
+/*DIV.ParagraphType DIV.KeyPoint {
+	font-size: inherit;
+	font-weight: bold;
+	text-decoration: none;	
+	color: inherit;
+	background-color: #ffffff;
+	padding: 5px 30px 10px 0px;
+	border-top: #aaaaaa solid 1px;
+	border-bottom: #aaaaaa solid 1px;
+	margin-top: 20px;
+}
+DIV.ParagraphType DIV.KeyPoint SPAN {
+	font-size: inherit;
+	font-weight: bold;
+	text-decoration: none;	
+	color: blue;
+	background-color: inherit;
+}*/
+DIV.ParagraphType TABLE.Tip {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0px;
+	width: 80%;
+	border-top: 1px outset #aaaaaa;
+	border-bottom: 3px outset #aaaaaa;
+	border-left: 1px outset #aaaaaa;
+	border-right: 3px outset #aaaaaa;
+	border-spacing: 3px;
+}
+
+DIV.ParagraphType TABLE.Tip TD.AreaIcon {
+       width: 45px;
+       vertical-align: top;
+       text-align: center;
+       font-weight: bold;
+}
+DIV.ParagraphType TABLE.Tip TD.AreaContent {
+       vertical-align: top;
+       padding: 5px 8px 5px 8px;
+       background-color: #dddddd;
+}
+
+DIV.ParagraphType DIV.InstructorNote {
+        border-top: 1px outset #aaaaaa;
+	border-bottom: 3px outset #aaaaaa;
+	border-left: 1px outset #aaaaaa;
+	border-right: 3px outset #aaaaaa;
+	margin:	3px 5px 3px 0px;
+	padding: 3px 2px 3px 6px;
+	float:left;
+	width: 110px;
+	font-size: 80%;
+	font-style: normal;	
+	color: inherit;
+	background-color: inherit;
+	position: relative;
+	margin-left: -135px;
+}
+DIV.ParagraphType DIV.InstructorNote IMG {
+	float: left;
+	position: relative;
+	margin-left: -15px;
+	margin-top: -10px;
+	padding: 0px;
+}
+/*DIV.ParagraphType DIV.InstructorNote SPAN {
+	font-size: inherit;
+	font-weight: bold;
+	text-decoration: none;	
+	color: yellow;
+	background-color: inherit;
+}*/
+DIV.ParagraphType DIV.ObjectiveNote {	
+        border-top: 1px outset #aaaaaa;
+	border-bottom: 3px outset #aaaaaa;
+	border-left: 1px outset #aaaaaa;
+	border-right: 3px outset #aaaaaa;
+	margin:	3px 5px 3px 0px;
+	padding: 3px 2px 3px 6px;
+	width: 110px;
+	font-size: 80%;
+	font-style: normal;	
+	color: inherit;
+	background-color: inherit;
+	position: absolute;
+	margin-left: -135px;
+}
+DIV.ParagraphType DIV.ObjectiveNote IMG {
+	float: left;
+	position: relative;
+	margin-left: -15px;
+	margin-top: -10px;
+	padding: 0px;
+}
+/*DIV.ParagraphType */
+DIV.MarginNote {	
+	margin:	3px 5px 3px 0px;
+	padding: 3px 2px 3px 6px;
+	margin-left: -30px;
+	cursor: pointer;
+	width: 20px;
+	white-space: normal;
+}
+/*DIV.ParagraphType*/
+ DIV.MarginNote IMG {
+	float: left;
+	position: relative;
+	margin-left: -15px;
+	margin-top: -10px;
+	padding: 0px;
+}
+/*DIV.ParagraphType DIV.ObjectiveNote SPAN {
+	font-size: 1.2em;
+	font-weight: bold;
+	text-decoration: none;	
+	color: inherit;
+}*/
+DIV.QuoteBlock {
+	font-style: italic;
+	text-decoration: none;
+	text-align: justify;
+	display: block;
+	color: inherit;
+	background-color: inherit;
+	padding: 5px 20px 5px 20px;
+}
+
+DIV.Code {
+	font-family: courier;
+	font-size: 12px;
+	background-color: #cccccc;
+	color: #666666;
+	margin: 15px 0px 15px 0px;
+	padding: 12px 0px 12px 40px;
+}
+DIV.CodeEPUB{
+	font-family: courier;
+	font-size: 10px;
+	background-color: #cccccc;
+	color: #666666;
+	margin: 15px 0px 15px 0px;
+	padding: 12px 0px 12px 40px;
+}
+DIV.Code UL.CodeLineNumbers LI {
+  	list-style-type: decimal;
+}
+DIV.Code UL.CodeNoNumbers LI {
+  	list-style-type: none;
+	list-style-image: none;
+}
+DIV.PopupBlock {
+	display: none; 
+	width: 350px; 
+	position:static;
+}
+
+/* @ParagraphType end ----------*/
+/*------------------------------*/
+
+
+/*----------------------------------*/
+/* @TitledBlockType begin ----------*/
+
+.TitledBlockType {
+	/*margin-left: inherit;*/
+	margin-top: 2px;
+	margin-bottom: 2px;
+	padding: 0px;
+	width: 100%;
+}
+.TitledBlockType_Title {
+       font-weight: bold;
+       text-align: left;
+	   color: #47b0d5;
+}
+
+TABLE.TitledBlockType TD.CellIcon {
+       width: 60px;
+       vertical-align: top;
+}
+TABLE.TitledBlockType TD.CellText {
+       vertical-align: top;
+       padding: 5px 2px 5px 2px;
+}
+DIV.TextNoteBlock {
+       font-style: normal;
+       text-align: left;
+}
+DIV.TextCustomerOutcome {
+       font-weight: bold;
+       text-align: left;
+       padding: 2px 3px 0px 3px;
+       background-color: #f3e3bc;
+}
+DIV.TextWarning {
+       font-style: normal;
+       text-align: left;
+       padding: 2px 3px 0px 3px;
+       background-color: #fcd2c3;
+}
+DIV.TextCaution {
+       font-style: normal;
+       text-align: left;
+       padding: 2px 3px 0px 3px;
+       border: 1px solid #f47929;
+}
+DIV.TextCriticalPoint {
+       font-style: italic;
+       text-align: left;
+       padding: 2px 3px 0px 3px;
+       border: 1px solid red;
+}
+DIV.TextTroubleShootingBlock {
+       font-style: italic;
+       text-align: left;
+       padding: 2px 3px 0px 3px;
+}
+
+/*----------------------------------*/
+/* @InfoBlockType begin ----------*/
+
+.InfoBlockType {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0px;
+	width: 80%;
+	border-top: 1px outset #aaaaaa;
+	border-bottom: 3px outset #aaaaaa;
+	border-left: 1px outset #aaaaaa;
+	border-right: 3px outset #aaaaaa;
+	border-spacing: 3px;
+}
+.InfoBlockType_Title {
+       font-weight: bold;
+       text-align: left;
+}
+
+TABLE.InfoBlockType TD.CellIcon {
+       width: 45px;
+       vertical-align: top;
+       text-align: center;
+       font-weight: bold;
+}
+TABLE.InfoBlockType TD.CellText {
+       vertical-align: top;
+       padding: 5px 8px 5px 8px;
+       background-color: #dddddd;
+}
+TABLE.InfoBlockType DIV.TextNoteBlock {
+       font-style: normal;
+       text-align: left;
+}
+TABLE.InfoBlockType DIV.TextCustomerOutcome {
+       font-weight: bold;
+       text-align: left;
+       border: none;
+       background-color: transparent;
+}
+TABLE.InfoBlockType DIV.TextWarning {
+       font-style: normal;
+       text-align: left;
+       border: none;
+       background-color: transparent;
+}
+TABLE.InfoBlockType DIV.TextCaution {
+       font-style: normal;
+       text-align: left;
+       border: none;
+       background-color: transparent;
+}
+TABLE.InfoBlockType DIV.TextCriticalPoint {
+       font-style: italic;
+       text-align: left;
+       border: none;
+       background-color: transparent;
+}
+TABLE.InfoBlockType DIV.TextTroubleShootingBlock {
+       font-style: italic;
+       text-align: left;
+       padding: 2px 3px 0px 3px;
+}
+
+
+/*---------------------------*/
+/* @ListType begin ----------*/
+
+.ListType {
+	font-size: inherit;
+	font-weight: inherit;
+	text-decoration: none;	
+	color: inherit;
+	background-color: inherit;
+	margin-left: inherit;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	padding: 0px;
+}
+.ListType DIV.ListPreamble {
+	font-size: inherit;
+	font-weight: inherit;
+	text-decoration: none;	
+	color: inherit;
+	background-color: inherit;
+	margin-bottom: 5px;
+}
+.ListType UL LI {
+	list-style-position: outside;
+	padding: 0;
+}
+.ListType TABLE.OrderedTable {
+	font-size: 12pt;
+	font-family: inherit;
+	margin-left: -42px;
+}
+.ListType TABLE.UnorderedTable {
+	font-size: 12pt;
+	font-family: inherit;
+	margin-left: -20px;
+}
+.ListType UL  DIV.listCharacter{
+	float:left;
+	padding-right: 10px;
+}
+.ListType UL.Bullet {
+	list-style-image: none;
+	list-style-image: url(../Transforms/media/BulletGlassSmall.png?bv=1);
+}
+.ListType UL.Numeric{
+	list-style-image: none;
+	list-style-type: decimal;
+}
+.ListType UL.LowercaseRoman {
+	list-style-image: none;
+	list-style-type: lower-roman;
+}
+.ListType UL.UppercaseRoman {
+	list-style-image: none;
+	list-style-type: upper-roman;
+}
+.ListType UL.LowercaseAlpha {
+	list-style-image: none;
+	list-style-type: lower-alpha;
+}
+.ListType UL.UppercaseAlpha {
+	list-style-image: none;
+	list-style-type: upper-alpha;
+}
+.ListType UL.Checkmark {
+/*	list-style-type: circle;*/
+	list-style-image: url(../Transforms/media/checkmark.gif);
+}
+.ListType UL.Arrow {
+/*	list-style-type: circle;*/
+	list-style-image: url(../Transforms/media/arrow.gif);
+}
+.ListType UL.Disk {
+	list-style-image: none;
+	list-style-type: disc;
+}
+.ListType UL.nDash {
+/*	list-style-type: circle;*/
+	list-style-image: url(../Transforms/media/n-dash.gif);
+}
+.ListType UL.mDash {
+/*	list-style-type: disc;*/
+	list-style-image: url(../Transforms/media/m-dash.gif);
+}
+.ListType UL.NoBullet {
+	list-style-type: none;
+	list-style-image: none;
+}
+html>/**/body .ListType UL.NoBullet{ /* not IE7 haks*/
+	list-style-type: none;
+	list-style-image: none;
+}
+.ListType UL.noMarker {
+	list-style-type: none;
+	list-style-image: none;
+}
+.ListType UL.Star {
+	list-style-image: url(../Transforms/media/star.gif);
+}
+.ListType UL.NoSymbol {
+	list-style-image: url(../Transforms/media/NoSymbol.gif);
+}
+/* When name of style "Custom1,Custom2...Custom10" is changed in XML schema, need to change name of class on the same name*/
+.ListType UL.Custom1 {
+	list-style-type: none;
+	list-style-image: url(../Transforms/media/info_white.png);
+}
+.ListType UL.Custom2 {
+	list-style-image: none;
+	list-style-image: url(../Transforms/media/WhiteBulletGlassSmall.png);
+}
+.ListType UL.Custom3 {
+	list-style-type: none;
+	list-style-image: url(../Transforms/media/BulletGlassSmall.png?bv=1);
+}
+.ListType UL.Custom4 {
+	list-style-type: none;
+	list-style-image: url(../Transforms/media/BulletGlassSmall.png?bv=1);
+}
+.ListType UL.Custom5 {
+	list-style-type: none;
+	list-style-image: url(../Transforms/media/BulletGlassSmall.png?bv=1);
+}
+.ListType UL.Custom6 {
+	list-style-type: none;
+	list-style-image: url(../Transforms/media/BulletGlassSmall.png?bv=1);
+}
+.ListType UL.Custom7 {
+	list-style-type: none;
+	list-style-image: url(../Transforms/media/BulletGlassSmall.png?bv=1);
+}
+.ListType UL.Custom8 {
+	list-style-type: none;
+	list-style-image: url(../Transforms/media/BulletGlassSmall.png?bv=1);
+}
+.ListType UL.Custom9 {
+	list-style-type: none;
+	list-style-image: url(../Transforms/media/BulletGlassSmall.png?bv=1);
+}
+.ListType UL.Custom10 {
+	list-style-type: none;
+	list-style-image: url(../Transforms/media/BulletGlassSmall.png?bv=1);
+}
+/* @ListType end ----------*/
+/*-------------------------*/
+
+
+/*----------------------------*/
+/* @TableType begin ----------*/
+
+DIV.TableType {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+DIV.TableType_Title {
+	font-size: 10pt;
+	font-weight: bold;
+	text-align: center;
+	background-color: inherit;
+	padding: 6pt 5px;
+}
+TABLE.TableType {
+	border-spacing: 0px;
+	background-color: inherit;
+	width: 100%;
+}
+TABLE.TableType TR.TableRow {
+	background-color: inherit;
+}
+TABLE.TableType TR.Row0 {
+	background-color: #D7EAF4;
+}
+TABLE.TableType TR.Row1 {
+	background-color: #EBF4F9;
+}
+TABLE.TableType THEAD {
+	color: #FFFFFF;
+	font-size: 18px;
+	text-align: left;
+	background-color: #005D84;
+	color: white;
+	border: 2px solid #FFFFFF;
+	padding: 5px 5px 5px 5px;
+	font-weight: bold;
+}
+TR.TableRow TD {
+	font-size: 10pt;
+	text-align: left;
+	padding: 5px 10px 5px 10px;
+}
+TD.TableCell {
+	text-align: left;
+	background-color: inherit;
+	padding: 5px 10px 5px 10px;
+}
+TD.TableHeaderCell {
+	font-size: 10pt;
+	text-align: left;
+	background-color: #dddddd;
+	border: 1px solid #000000;
+	padding: 5px 10px 5px 10px;
+	font-weight: bold;
+}
+TABLE.TableType TFOOT TD {
+	font-size: inherit;
+	text-align: left;
+	background-color: #dddddd;	
+	padding: 5px 10px 5px 10px;
+	font-weight: bold;
+}
+DIV.TableCaption {	
+	font-style: italic;
+	width: 100%;
+	text-align: center;
+	padding: 5px 0px 5px 0px;
+}
+
+/* @TableType end ---------*/
+/*-------------------------*/
+
+/*-----------------------------*/
+/* @FigureType begin ----------*/
+
+DIV.FigureType {
+	border: none;
+	text-align: left;
+	padding: 5px 0px 5px 0px;
+}
+DIV.Caption {
+        margin-top: 3px;
+	font-style: italic;
+	width: inherit;
+	text-align: center;
+}
+DIV.TextOverlay {
+	position: relative;
+	text-align: left;
+}
+DIV.FigureType DIV.WrapLeft {
+    float: left;
+}
+
+/* @FigureType end ----------*/
+/*---------------------------*/
+
+
+/*------------------------------*/
+/* GlossaryItem begin ----------*/
+
+DIV.Glossary {
+	text-align: justify;
+	color: #666666;
+}
+DIV.GlossaryTitle {
+	font-weight: bold;
+	font-size: 16px;
+	padding: 15px 0px 15px 0px;
+	color: #010170;
+}
+A.GlossaryABCLink {
+	font-weight: bold;
+	font-size: 14px;
+	color: #1696BD;
+}
+DIV.GlossaryItem {
+	font-size: 12px;
+	padding: 5px 0px 10px 0px;
+	text-align: justify;
+	color: #000000;
+}
+DIV.GlossaryItems {
+	width: 100%;
+	overflow-y: scroll;
+}
+DIV.GlossaryItem DIV.GlossaryTerm {
+	font-weight: bold;
+	font-size: 14px;
+	color: #1696BD;
+}
+DIV.GlossaryItem DIV.GlossaryDef {
+	font-size: 11px;
+	display: block;
+	padding: 0px 0px 4px 0px;
+}
+DIV.ParagraphType DIV.GlossaryItem {
+        border-top: 1px outset #aaaaaa;
+	border-bottom: 3px outset #aaaaaa;
+	border-left: 1px outset #aaaaaa;
+	border-right: 3px outset #aaaaaa;
+	margin:	3px 5px 3px 0px;
+	padding: 3px 2px 3px 6px;
+	width: 110px;
+	font-size: 80%;
+	font-style: normal;
+	color: #000031;
+	background-color: inherit;
+	position: absolute;
+	margin-left: -135px;
+}
+DIV.ParagraphType DIV.GlossaryItem DIV.GlossaryTerm {
+	font-size: 100%;
+}
+DIV.ParagraphType DIV.GlossaryItem DIV.GlossaryDef {
+	padding: 0px 0px 0px 7px;
+	font-size: 100%;
+	text-align: left;
+}
+DIV.GlossaryItemPronoun {
+	font-weight: normal;
+	font-size: 11px;
+	font-style: italic;	
+	padding: 0px 0px 0px 20px;
+}
+
+DIV.GlossaryItem LI {
+	margin-left: -25px;
+}
+
+DIV.GlossaryItems LI {
+	margin-left: -15px;
+}
+
+/* GlossaryItem end ----------*/
+/*----------------------------*/
+
+/*---------------------------------*/
+/* MediaObjectType begin ----------*/
+
+DIV.MediaObjectType {
+	border: none;
+	padding: 5px 10px 5px 10px;
+}
+
+/* MediaObjectType end ----------*/
+/*-------------------------------*/
+
+
+/*-------------------------------------------*/
+/* @EducationalObjectiveType begin ----------*/
+
+
+DIV.EducationalObjectiveType {
+	padding: 0px 10px 5px 0px;
+}
+DIV.ObjectiveIntro {
+	font-size: inherit;
+	font-weight: inherit;
+	text-decoration: none;	
+	color: inherit;
+	background-color: inherit;
+	padding: 0px 0px 10px 0px;
+	margin-left: -25px;
+}
+DIV.StatementList {
+	font-size: inherit;
+	font-weight: inherit;
+	text-decoration: none;	
+	color: inherit;
+	background-color: inherit;
+}
+DIV.StatementList UL LI {
+	list-style-position: outside;
+}
+UL.StatementList {
+	list-style-type: disc;
+	list-style-image: url(../Transforms/media/BulletGlassSmall.png);
+}
+html>/**/body TD UL{ /* not IE7 hack*/
+	margin: 0;
+	vertical-align: middle;
+}
+LI #horizontalRuleLines{
+	width: 450px;
+	border-bottom: #000 1px solid;
+	height: 20px;
+}
+/* @EducationalObjectiveType end ----------*/
+/*-----------------------------------------*/
+
+
+/*------------------------------------*/
+/* StepGroup begin ----------*/
+
+DIV.StepGroup {
+	padding: 0px 0px 10px 0px;
+	margin-top: 10px;
+	clear: both;
+}
+DIV.Title_StepGroup {
+	font-size: inherit;
+	font-weight: bold;
+	font-style: inherit;
+	color: inherit;
+	background-color: inherit;
+	margin-top: 20px;
+}
+DIV.ClosedStep {
+    background: #8A9DAC url(../Transforms/media/ClosedStepBackground.png) repeat-x scroll center;
+    cursor: pointer;
+    font-weight: bold;
+    font-style: italic;
+    font-family: arial;
+    font-size: 10pt;
+    margin-left: 30px;
+    padding-left: 10px;
+    padding-top: 5px;
+    height: 24px;
+	position: relative;
+}
+.AnimatedStepLabel {
+	position: relative; 
+	padding-left:30px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.StepCorner {
+	position: absolute;
+	height: 24px;
+    margin: 0;
+    padding: 0;
+	top: 2px;
+    width: 10px;
+}
+.LeftSideCorner {
+	background: url(../Transforms/media/ClosedStep.png) no-repeat left center;
+	left: 0;	
+}
+.RightSideCorner {
+    background: url(../Transforms/media/ClosedStep.png) no-repeat right center;
+	right: 0;
+}
+TABLE.StepActionTable {
+	padding-top: 0px;
+	width: 100%;
+}
+TABLE.StepActionTable TD.Separator {
+	vertical-align: top;
+	font-size: inherit;
+	color: #000000;
+	font-weight: bold;
+	font-style: italic;
+	border-bottom: 2px solid #000000;
+}
+TD.SeparatorSubStep {
+	border-bottom: 1px solid  #999999;
+}
+TABLE.StepActionTable TD {
+	padding-top: 5px;
+}
+TABLE.StepActionTable TD.None {
+                padding: 0px;
+                margin:  0px;
+                width: 21px;
+}
+TABLE.StepActionTable TD.Heading {
+	font-size: inherit;
+	color: inherit;
+	font-weight: bold;
+	width: 100px;
+	vertical-align: top;
+	padding-left: 20px;
+}
+TABLE.StepActionTable TD.Text {
+               width: 80%;            	
+}
+TABLE.StepActionTable TD.TextNone {
+               padding: 0px;
+               margin:  0px;
+}
+TABLE.StepActionTable TR.UserAction {
+	font-size: inherit;
+	color: inherit;
+}
+TABLE.SystemResponse {
+	border:none; 
+	border-collapse: collapse;
+}
+TABLE.SystemResponse TD {
+	padding:0px;
+}
+DIV.SystemResponseIcon {
+	padding: 0px 2px 0px 2px;
+}
+TABLE.StepActionTable TD.SubstepTable {
+	padding-left: 30px;
+}
+TABLE.StepActionTable TD.StepCell {
+	padding-left: 20px;
+}
+TABLE.StepActionTable TD.SubstepCell {
+	padding-left: 20px;
+}
+TABLE.StepActionTable TR.StepNote {
+	font-style: italic;
+}
+TABLE.StepActionTable TR.StepWarning {
+	font-style: italic;
+}
+TR.UserAction DIV.Example {
+	text-align: left;
+}
+TR.SystemResponse DIV.Example {
+	text-align: left;
+}
+TEXTAREA.EntryField {
+	border: 2px solid #316AC5;
+}
+DIV.CharLimit{
+	text-align: right;
+	padding-top: 7px;
+	padding-right: 30px;
+}
+/* StepGroup end ----------*/
+/*----------------------------------*/
+
+DIV.DocWriter {
+	padding-left: 10px;
+}
+
+DIV.DocWriter DIV.Instructions {
+	padding: 0px 10px 10px 10px;
+}
+
+DIV.Instructions {
+	margin-top: 8px;
+	font-style: italic;
+}
+DIV.DocWriterButton  {
+	text-align:right;
+}
+INPUT.DocWriterButton  {
+	background-color:#AEC0D7; 
+	border:3px outset #ACC5DA; 
+	height:27px; 
+	margin-right:10px;
+	width: 130px;
+}
+INPUT.DocWriterButton[disabled]  {
+	background-color:#F2F2ED; 
+	border:3px outset #A6A6A6; 
+	height:27px; 
+	margin-right:10px;
+	width: 130px;
+}
+
+/* WebDnDSequenceActivity begin ----------*/ 
+
+DIV.DnDSequencing DIV.CorrResponse {
+	font-style: italic;
+	font-weight: bold;
+	color: #18386b;
+	padding: 0px 0px 0px 10px;
+	visibility: hidden;
+	display: none;
+	float: left;
+}
+DIV.DnDSequencing DIV.IncorrResponse {
+	font-style: italic;
+	font-weight: bold;
+	color: #9c0031;
+	padding: 2px 0px 0px 0px;
+	visibility: hidden;
+	display: none;
+	clear: both;
+}
+DIV.DnDSequencing DIV.TryAgain {
+	font-weight: bold;
+	color: #000000;
+	padding: 2px 0px 0px 0px;
+	visibility: hidden;
+	display: none;
+	clear: both;
+}
+/* WebDnDSequenceActivity end ----------*/ 
+/*--------------------------------------*/
+
+/*-----------------------------------*/
+/* NonScoredActivity begin ----------*/
+
+DIV.NonScoredActivity {
+	border-left: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+}
+DIV.NonScoredActivity OL {
+	list-style-type: square;
+	padding-bottom: 20px;
+}
+
+/* NonScoredActivity end ----------*/
+/*---------------------------------*/
+
+/*-----------------------------*/
+/* RichText begin ----------*/
+
+SPAN.WysiwygEmph {
+   font-weight: bold;
+}
+SPAN.WysiwygItalic {
+   font-style: italic;
+}
+SPAN.WysiwygDoubleUnderline {
+    border-bottom:3px double;
+}
+SPAN.WysiwygUnderline {
+   text-decoration: underline;
+}
+SPAN.WysiwygOverline{
+   text-decoration: overline;
+}
+SPAN.WysiwygStrike {
+   text-decoration: line-through;
+}
+SPAN.WysiwygEmphDoubleUnderline {
+    font-weight: bold;
+    border-bottom:3px double;
+}
+SPAN.WysiwygEmphItalic {
+    font-weight: bold;
+    font-style: italic;
+}
+SPAN.WysiwygEmphItalicDoubleUnderline {
+    font-weight: bold;
+    border-bottom:3px double;
+    font-style: italic;
+}
+SPAN.WysiwygEmphItalicUnderline {
+    font-weight: bold;
+    text-decoration: underline;
+    font-style: italic;
+}
+SPAN.WysiwygEmphUnderline {
+    font-weight: bold;
+    text-decoration: underline;
+}
+SPAN.WysiwygItalicDoubleUnderline {
+    border-bottom:3px double;
+    font-style: italic;
+}
+SPAN.WysiwygItalicUnderline {
+    text-decoration: underline;
+    font-style: italic;
+}
+SPAN.WysiwygFootnote {
+   font-family: Verdana;
+}
+SPAN.WysiwygInLineCode {
+   font-family: Courier;
+   font-size: 1em;
+   color: #666666;
+}
+SPAN.WysiwygInLineTerm {
+   color: blue;
+   text-decoration: underline;
+}
+SPAN.WysiwygInLineLabFile {
+   font-weight: bold;
+   font-style: italic;
+}
+SPAN.WysiwygInLineKeyword { 
+   font-style: italic;
+   font-weight: bold;
+}
+SPAN.WysiwygInLineKeyboard { 
+   font-variant: small-caps;
+}
+SPAN.WysiwygInLineMenuSelection { 
+   font-weight: bold;
+}
+SPAN.WysiwygInLineTypeThis { 
+   font-family: Courier;
+   font-style: italic;
+   font-weight: bold;
+   font-size: 1em;
+   color: #666666;
+   margin-right: 7px;
+}
+SPAN.WysiwygInLineApplicationPrompt {
+   font-style: italic;
+}
+SPAN.WysiwygInLineWindowName {
+   font-weight: bold;
+   font-variant: small-caps;
+}
+SPAN.WysiwygInLineInstructorText { 
+   font-weight: normal;
+   font-style: italic;
+   text-transform: uppercase;
+}
+SPAN.WysiwygCommandName { 
+   font-weight: bold;
+   font-family: Courier;
+}
+SPAN.WysiwygSyntaxArg { 
+   font-style: italic;
+   font-family: Courier;
+}
+SPAN.WysiwygSyntaxKeyword { 
+   font-weight: bold;
+   font-family: Courier;
+   font-style: italic;
+}
+
+SPAN.WysiwygEmphUrl {
+   font-weight: bold;
+   font-style: italic;
+   border-bottom: 1px dotted blue;
+}
+SPAN.WysiwygEmphUrl A {
+   border-bottom: 1px dotted blue;
+}
+SPAN.WysiwygHRef {
+   color: blue;
+   text-decoration: underline;
+}
+SPAN.WysiwygReviewerText {
+   color: red;
+   font-weight: bold;
+}
+SPAN.WysiwygHighlight {
+   background-color: yellow;
+}
+
+
+/* RichText end ----------*/
+/*---------------------------*/
+
+
+/*--------------------------------------*/
+/* CompetencyDefinition begin ----------*/
+
+DIV.CompetencyDef {
+   font-family: inherit;
+   font-size: inherit;
+   color: inherit;
+   margin-top: 15pt;
+   margin-bottom: 15px;
+}
+DIV.CompetencyDef DIV.ID, DIV.Label, DIV.Registered, DIV.Description {
+}
+
+/* CompetencyDefinition end ----------*/
+/*------------------------------------*/
+
+
+
+/* ----- Slide ----- */
+/*
+DIV.Slide {
+   font-family: Helvetica;
+   width: 640px;
+   height: 480px;
+   border-top: 1px solid #cccccc;
+   border-left: 1px solid #cccccc;
+   border-bottom: 2px solid #666666;
+   border-right: 2px solid #666666;
+   margin-top: 15pt;
+}
+DIV.TitleSlide {
+   line-height: 30pt;
+   font-size: 16pt;
+   font-weight: bold;
+   padding-left: 10pt;
+   vertical-align: bottom;
+}
+DIV.SlideRuler {
+   background-image: url(../../media/Core/slide-ruler.gif);
+   background-repeat: no-repeat;
+   height: 24px;
+   font-size: 10pt;
+   font-weight: bold;
+   color: #ffffff;
+   text-align: right;
+   padding-right: 70pt;
+   padding-top: 3pt;
+   margin-bottom: 5pt; 
+}
+DIV.SlideBody {
+   font-size: 11pt;
+   padding-left: 20pt;
+   padding-right: 20pt;
+   height: 375px;
+}
+DIV.SlideFooter {
+   font-size: 8pt;
+   padding-left: 5pt;
+   margin-top: 5pt;
+   color: #999999;
+}
+
+DIV.TitleSlideDeck {
+   font-size: 18pt;
+   font-weight: bold;
+   padding-left: 10pt;
+   vertical-align: bottom;
+}
+*/
+
+
+DIV.Slide {
+   font-family: Helvetica;
+   width: 600px;
+   /*border-top: 1px solid #cccccc;*/
+   /*border-left: 1px solid #cccccc;*/
+   /*border-bottom: 2px solid #666666;*/
+   /*border-right: 2px solid #666666;*/
+   border: none;
+   padding: 3px 0;
+   /*background-image: url(../../media/Core/slide_background.jpg);
+   background-repeat: no-repeat;*/
+}
+DIV.SlideHeight{
+	/*height:575px;
+	overflow: hidden;*/
+}
+DIV.SlideHeightTopic{
+}
+DIV.SlideTitle {
+   padding-top: 48px;
+   padding-bottom: 20px;
+   font-size: 32px;
+   font-weight: bold;
+   color: #465d75;
+   text-align: center;
+}
+DIV.SlideTitleTopic{
+   padding-top: 20px;
+   padding-bottom: 10px;
+   padding-left: 10px;
+   padding-right: 10px;
+   font-size: 15px;
+   font-weight: bold;
+   color: #465d75;
+   text-align: center;
+}
+DIV.SlideBody {
+   font-size: 20px;
+   padding: 1px 40px 0px 45px;
+}
+
+DIV.SlideBodyTopic{
+   font-size: 12px;
+   padding: 1px 15px 1px 0px;
+}
+DIV.SlideFooter {
+   width: 100%;
+}
+DIV.SlideFooter TABLE {
+   width: 100%;
+   border-top: 2px solid #333333;
+   margin-top: 0px;
+}
+DIV.SlideFooter TABLE TR {
+   height: 60px;
+}
+DIV.SlideFooter TABLE TD.col1 {
+   vertical-align: top;
+   width: 30%;
+   color: #ffffff;
+}
+DIV.SlideFooter TABLE TD.col1 DIV {
+   font-size: 12px;
+   font-weight: bold;
+   background-color: #465d75;
+   width: 50%;
+   padding: 2px 4px 2px 4px;
+   margin: 0 0 0 50px;
+   text-align: center;
+}
+DIV.SlideFooter TABLE TD.col1 DIV.col1div{
+   font-size: 10px;
+   padding: 2px 6px 2px 2px;
+   margin: 0 0 0 10px;
+}
+DIV.SlideFooter TABLE TD.col2 {
+   font-size: 10px;
+   color: #465d75;
+   vertical-align: bottom;
+   text-align: center;
+   width: 38%;
+}
+DIV.SlideFooter TABLE TD.col2 DIV{
+   font-size: 10px;
+}
+DIV.SlideFooter TABLE TD.col3 {
+   vertical-align: top;
+   text-align: right;
+   padding-right: 15px;
+   width: 30%;
+}
+DIV.SlideFooter TABLE TD.col3  DIV{
+   padding-right: 10px;
+}
+
+DIV.TitleSlideDeck {
+   font-size: 18pt;
+   font-weight: bold;
+   padding-left: 10pt;
+   padding-top: 250pt;
+   text-align: center;
+   color: #003366;
+   vertical-align: bottom;
+}
+
+/*--- Slide end ---*/
+/*-----------------*/
+
+
+/* ----------- */
+/* --- Lab --- */
+
+DIV.LabType {
+}
+DIV.Title_Lab {
+   font-size: 16px;
+   font-weight: bold;
+   font-style: italic;
+   color: #999999;
+   background-color: inherit;
+   padding: 12px 0px 2px 0px;
+}
+DIV.LabEnder {
+   line-height: 7pt;
+   border: 1px solid #808080;
+   margin: 10px 0px 10px 0px;
+   background-color: #cccccc;
+}
+OL.LabSteps {
+   list-style-type: decimal;
+}
+OL.LabSteps LI.LabStep {
+   list-style-position: outside;
+   padding: 0px 0px 3px 0px;
+   font-weight: bold;
+}
+OL.LabSteps DIV {
+   font-weight: normal;
+}
+
+DIV.LabSolution {
+}
+DIV.StepsLabNote {
+   font-style: italic;
+   padding: 10px;
+}
+DIV.StepLabNote {
+   font-style: italic;
+   padding: 10px;
+}
+DIV.StepsLabText {
+}
+DIV.StepLabText {
+}
+
+
+/*--- Lab end ---*/
+/*---------------*/
+
+
+
+
+
+
+
+
+/* for Yum Demo */
+/* ----- Standard ----- */
+
+DIV.Standard {
+}
+
+DIV.Criteria {
+   margin-left: 25px;
+}
+DIV.CSL_Example {
+   color: #666666;
+}
+DIV.CSL_NonExample {
+   color: #666666;
+}
+DIV.CSL_Explanation {
+   color: #666666;
+}
+DIV.CSL_Example SPAN {
+   font-size: 9px;
+   font-weight: bold;
+   color: #666666;
+}
+DIV.CSL_NonExample SPAN {
+   font-size: 9px;
+   font-weight: bold;
+   color: #666666;
+}
+DIV.CSL_Explanation SPAN {
+   font-size: 9px;
+   font-weight: bold;
+   color: #666666;
+}
+DIV.CSL_Example UL {
+   margin-top: 3px;
+   margin-bottom: 3px;
+   padding: 0px;
+}
+
+
+
+/*------------------*/
+/* --- CiscoRIO --- */
+
+DIV.CiscoRIO {
+	text-align: left;
+	width: 640px;
+}
+DIV.CisciRIO DIV.RLOs {
+}
+
+
+/*----------------------------------------*/
+/*--- CiscoRIO shared components begin ---*/
+
+DIV.Title_Procedure {
+	font-size: 14px;
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: none;	
+	color: inherit;
+	background-color: inherit;
+	/*due to the IE bug of clipping text in negative margin */
+	position: relative;
+	/* left: -135px; */
+}
+DIV.Title_Process {
+	font-size: 14px;
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: none;	
+	color: inherit;
+	background-color: inherit;
+	/*due to the IE bug of clipping text in negative margin */
+	position: relative;
+	/* left: -135px; */
+}
+DIV.Title_Principle {
+	font-size: 14px;
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: none;	
+	color: inherit;
+	background-color: inherit;
+	/*due to the IE bug of clipping text in negative margin */
+	position: relative;
+	/* left: -135px; */
+}
+DIV.Introduction {
+	font-size: inherit;
+	font-weight: inherit;
+	text-decoration: none;	
+	color: inherit;
+	background-color: inherit;
+	padding: 0px 0px 10px 0px;
+}
+
+/*--- CiscoRIO shared components end ---*/
+/*--------------------------------------*/
+
+
+/* ------------------------------------------------ */
+/* Concept, Facts, Principle, Procedure, Process */
+
+DIV.Concept {
+	margin: 25px 0px 25px 0px; 
+}
+DIV.Title_Concept {
+	font-size: 14px;
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: none;	
+	color: inherit;
+	background-color: inherit;
+	/*due to the IE bug of clipping text in negative margin */
+	position: relative;
+	/* left: -135px; */
+}
+DIV.Concept DIV.Terms {
+	background-color: inherit;
+	margin: 20px 0px 20px 0px;
+}
+DIV.Title_Terms{
+	font-weight: bold;
+	text-align: left;
+}
+DIV.Heading_ConceptTerms {
+	font-size: 14px;
+	font-weight: bold;
+	color: #666666;
+}
+
+
+DIV.Facts {
+	margin: 25px 0px 25px 0px; 
+}
+DIV.Title_Facts {
+	font-size: 14px;
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: none;	
+	color: inherit;
+	background-color: inherit;
+	/*due to the IE bug of clipping text in negative margin */
+	position: relative;
+	/* left: -135px; */
+}
+
+DIV.Principle {
+	margin: 25px 0px 25px 0px; 
+}
+DIV.Principle DIV.PrincipleStatement {
+	font-weight: bold;
+	padding-top: 5px;
+	margin-left: 1in;
+	margin-right: 1in;
+	text-align: justify;
+}
+DIV.Principle DIV.Guidelines {
+	padding: 7px 0px 7px 0px;
+}
+/*contains List, which is defined in Core.css*/
+
+
+DIV.Procedure {
+	margin: 25px 0px 25px 0px; 
+	width: 100%;
+}
+DIV.Procedure DIV.Demonstration {
+}
+DIV.Demonstration DIV.Heading {
+}
+
+
+DIV.Process {
+	margin: 25px 0px 25px 0px; 
+}
+DIV.Process DIV.StageTable {
+/*contains Table, which is defined in Core.css*/
+}
+
+DIV.containerTitle{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 28px;
+	font-weight: bold;
+	margin-bottom: 15px;
+	position: relative;
+	color: #0088C2;
+}
+DIV.Topic_Title {
+	color: #0088C2;
+	font-size: 22px;
+	font-weight: bold;
+	text-decoration: none;	
+	background-color: inherit;
+	padding-bottom: 5px;
+	/*due to the IE bug of clipping text in negative margin */
+	position: relative;
+	/* left: -135px; */
+}
+DIV.Topic_TitleCR {
+	color: #FFFFFF!important;
+}
+DIV.Topic_SubTitle {
+	font-size: 14px;
+	font-weight: normal;
+	text-decoration: none;	
+	color: inherit;
+	background-color: inherit;
+	/*due to the IE bug of clipping text in negative margin */
+	position: relative;
+	/* left: -135px; */
+}
+
+DIV.Topic_Title_level1 {
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;	
+	color: inherit;
+	background-color: inherit;
+	/*due to the IE bug of clipping text in negative margin */
+	position: relative;
+	/* left: -135px; */
+}
+DIV.Topic_SubTitle_level1 {
+	font-size: 13px;
+	font-weight: normal;
+	text-decoration: none;	
+	color: inherit;
+	background-color: inherit;
+	/*due to the IE bug of clipping text in negative margin */
+	position: relative;
+	/* left: -135px; */
+}
+
+DIV.Topic_Title_level2 {
+	font-size: 13px;
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: none;	
+	color: inherit;
+	background-color: inherit;
+	/*due to the IE bug of clipping text in negative margin */
+	position: relative;
+	/* left: -135px; */
+}
+DIV.Topic_SubTitle_level2 {
+	font-size: 12px;
+	font-weight: normal;
+	font-style: italic;
+	text-decoration: none;	
+	color: inherit;
+	background-color: inherit;
+	/*due to the IE bug of clipping text in negative margin */
+	position: relative;
+	/* left: -135px; */
+}
+DIV.Title_Applet {
+	font-size: 14px;
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: none;	
+	color: inherit;
+	background-color: inherit;
+	/*due to the IE bug of clipping text in negative margin */
+	position: relative;
+	left: -35px;
+}
+
+DIV.Category_Label {
+	font-weight: bold;
+}
+
+DIV.Category_Description {
+	
+}
+
+DIV.Category_Detail {
+	
+}
+
+DIV.Title_Categories {
+	font-weight: bold;
+    text-align: left;
+}
+DIV.ImageMap {
+	padding: 3px;
+}
+DIV.Title_ImageMap {
+	font-weight: bold;
+    text-align: left;
+	color: #47b0d5;
+}
+DIV.Title_DragDrop {
+	font-weight: bold;
+    text-align: left;
+	color: #47b0d5;
+}
+/* ------------------------------------------------ */
+/* Flash, Movie, Audio */
+DIV.Movie {
+	text-align: center;
+	margin-bottom: 3px;
+}
+DIV.MovieIntroduction {
+	text-align: left;
+	margin-top: 10px;
+}
+DIV.MovieInstructions{
+	text-align: left;
+	font-style: italic;
+	margin-top: 10px;
+}
+DIV.Audio {
+	text-align: center;
+	margin-bottom: 3px;
+}
+DIV.Applet {
+	text-align: center;
+	margin-bottom: 3px;
+}
+DIV.Flash {
+	text-align: center;
+	margin-bottom: 3px;
+}
+DIV.Title_Flash {
+	font-weight: bold;
+    text-align: left;
+}
+/* ------------------------------------------------ */
+/* AVSctipt */
+DIV.AVScript INPUT.AVButton{
+    margin-bottom: 5px; 	
+	width: 170px;
+	height: 26px;
+	color: #666;
+	font-weight: bold;
+	text-align: center;
+	background: url(../Transforms/media/AVButton.gif) repeat-x; 
+	border: 1px solid #bbb; 	
+}
+/* ------------------------------------------------ */
+div.button {
+	color: black ;
+	background: #dcdcdc ;
+	border-top: 1px solid #ccc ;
+	border-right: 1px solid #333 ;
+	border-bottom: 1px solid #333 ;
+	border-left: 1px solid #ccc ;
+	margin: 2px 2px;
+	/*due to the IE bug of clipping text in negative margin */
+	position: relative;
+	left: -135px;
+	width: 180px;
+}
+div.button_title {
+	/*due to the IE bug of clipping text in negative margin */
+	position: relative;
+	left: -135px;
+	width: 180px;
+}
+a.menubutton:link {
+	text-decoration: none ;
+	color: black ;
+	background: #dcdcdc ;
+	display: block ;
+}
+a.menubutton:visited {
+	text-decoration: none ;
+	color: black ;
+	background: #dcdcdc ;
+	display: block ;
+}
+a.menubutton:hover {
+	text-decoration: none ;
+	color: yellow ;
+	background: black ;
+	display: block ;
+}
+a.menubutton:active {
+	text-decoration: none ;
+	color: yellow ;
+	background: black ;
+	display: block ;
+}
+a.menutitle:link {
+	text-decoration: none ;
+	color: white ;
+	background: #000066 ;
+	display: block ;
+}
+a.menutitle:visited {
+	text-decoration: none ;
+	color: white ;
+	background: #000066 ;
+	display: block ;
+}
+a.menutitle:hover {
+	text-decoration: none ;
+	color: yellow ;
+	background: black ;
+	display: block ;
+}
+a.menutitle:active {
+	text-decoration: none ;
+	color: yellow ;
+	background: black ;
+	display: block ;
+}
+table.Resources{
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #000000;
+		margin-bottom:3px;
+}
+table.Resources td{
+        border: 1px solid #999999;
+}
+div.ResourcesTitle{
+        padding: 7px 7px 7px 5px;
+        font-weight: bold;
+        color: inherit;
+        background-color:inherit;
+        display: block;
+}
+div.ResourceTitle{
+        padding: 6px 7px 6px 5px;
+        font-weight: bold;
+        color: inherit;
+        background-color:inherit;
+        display: block;
+}
+div.ResourceDescription{
+        padding: 0px 7px 6px 5px;
+        color: inherit;
+        background-color:inherit;
+        display: block;
+}
+tr.Resource1{
+        background-color: #dddfee;
+}
+tr.Resource2{
+        background-color: #ffffff;
+}
+td.ResourceLink{
+        width: 80px;
+}
+img.ResourceDescription{
+        border-style: none;
+}
+
+.FlashXML{
+	margin-bottom: 3px;
+}
+
+DIV.FlashXMLTitle{
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: none;	
+	color: inherit;
+	background-color: inherit;
+	position: relative;
+}
+DIV.HorizontalLine{
+	border-bottom:0.5px solid black; 
+	width:inherit; 
+	height:20px;
+}
+
+/*--------------------------------------*/
+/*--- Frequently Asked Questions ---*/
+DIV.FrequentlyAskedQuestions{
+    background-color:#EEEEEE;
+    border-style:outset;
+    border-width:2px;
+}
+DIV.FrequentlyAskedQuestions DIV.Title_FrequentlyAskedQuestions{
+    color:#003366;
+    font-weight:bold;
+    margin:5px 0 5px 10px;
+}
+DIV.FrequentlyAskedQuestions DIV.Title_Faq_Category{
+    color:#003366;
+    font-weight:bold;
+    margin:5px 0 5px 10px;
+}
+DIV.FrequentlyAskedQuestions DIV.FAQ{
+    margin:5px 0 5px 10px;
+}
+DIV.FrequentlyAskedQuestions DIV.FAQ DIV.Question{
+    padding:0 5px 0 0;
+    clear:both;
+}
+DIV.FrequentlyAskedQuestions DIV.FAQ DIV.Answer{
+    padding:0 5px 0 0;
+    clear:both;
+}
+DIV.Question DIV.LBlock{
+    float:left;
+    font-size:15px;
+    font-weight:bold;
+}
+DIV.Question DIV.RBlock{
+    margin-left:25px;
+    font-weight: bold;
+    font-size:15px;
+}
+DIV.Answer DIV.LBlock{
+    float:left;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 0 0 2px;
+}
+DIV.Answer DIV.RBlock{
+    margin-left:25px;
+}
+DIV.FrequentlyAskedQuestions DIV.FAQ DIV.RelatedInformation{
+    
+}
+DIV.FAQ DIV.RelatedInformation DIV.Title{
+    color:#000000;
+    font-weight:bold;
+    margin:5px 0 5px 10px;
+}
+DIV.FAQ DIV.RelatedInformation DIV.Links{
+    padding:0 0 10px 20px;
+}
+/*--- Frequently Asked Questions end ---*/
+/*--------------------------------------*/
+/*-------------------Calendar ----------------------*/
+.calendar-box {
+	display:none;
+	background-color:#fff;
+	border:2px outset #444;
+	position:absolute;
+	width:250px;
+	padding: 0 5px;
+    text-align:center;
+}
+.calendar-box select.calendar-month {
+	width:90px;
+}
+.calendar-box select.calendar-year {
+	width:70px;
+}
+.calendar-box .calendar-cancel {
+	width:85px;
+}
+.calendar-box table td {
+	width:14%;
+}
+.calendar-box .calendar-title {
+	text-align:center;
+}
+.calendar-box a {
+	text-decoration:none;
+    color:black;
+}
+.calendar-box .today a {
+	padding:0 5px;
+	margin-left:-5px;
+	background-color:#ffe9c6;
+}
+.calendar-box .selected a {
+	padding:0 5px;
+	margin-left:-5px;
+	background-color:#c9ff8b;
+}
+/*------------ Calendar end ------------*/
+/*--------------------------------------*/
+/*------------ Drop Down Simulator ------------*/
+DIV.DropDownToAppear{
+	display: none;
+	margin: 3px; 
+	font-family: Arial,Helvetica,sans-serif; 
+	/*font-weight: bold; */
+	border: 1px solid;
+	position: absolute; 
+	z-index: 5;   
+}
+DIV.DropDownToAppear A{
+	text-decoration: none;
+	font-size: 12px;
+	display: block; 
+	color: black;
+}
+/*------------ Drop Down Simulator end ------------*/
+/*-------------------------------------------------*/
+/*------------ xRef Dialog ------------------------*/
+.Xref-modal-content {
+	width: 100% !important;
+	padding: 0 !important;
+}
+.XrefDialog{
+	width: 0px;  /* change if you need custom size of */
+	height: 0px; /* xRef dialog */
+}
+/*------------ xRef Dialog end---------------------*/ 
+/*-------------------------------------------------*/
+/*------------ Stage ------------*/
+DIV.stage{
+	position: relative; 
+}
+DIV.stagetitle, DIV.layoutContent DIV.TitledBlockType_Title {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 15px;
+	position: relative;
+	color: #9c0031;
+}
+DIV.layoutObject{
+	overflow: auto; 	
+}
+DIV.layoutContent DIV.FigureType, DIV.layoutContent DIV.FigureType div{
+	padding: 0!important;	
+}
+DIV.layoutContent DIV.TableType{
+	margin: 0!important;	
+}
+DIV.layoutContent DIV.ListType{
+	margin: 0!important;	
+}
+DIV.layoutContent DIV.Code{
+	margin: 0!important;	
+}
+/*------------ Stage end ------------*/
+
+/* -----------  IE7 workarounds ----------------*/
+
+TD UL { 
+	margin: 0;
+}
+html>/**/body TD UL{ /* IE7 will ignore this */
+	vertical-align: middle;
+}
+.ListType TABLE {
+	*font-size: 12pt;
+}
+.ListType .Wysiwyg {
+	padding-top: 3px!important;
+	padding-bottom: 0!important;
+}
+
+/* -----------  IE7 workarounds end ----------------*/

@@ -186,14 +186,14 @@
 }
 
 - (void)saveNote {
-	if (![self.contentTextView.text isEqualToString:self.note.content]) {
+/*	if (![self.contentTextView.text isEqualToString:self.note.content]) {
 		self.note.content = self.contentTextView.text;
 		if (![self.contentTextView.text isEqualToString:@""]) {
             NSString *trimmedContent = [self.contentTextView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 			self.note.title = [[trimmedContent substringToIndex:([trimmedContent length] < kTitleLength ? [trimmedContent length] : kTitleLength)] stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
 		}
 		[self.note saveNote];
-	}
+	}*/
 }
 
 - (void)updateViewForNote {
@@ -208,8 +208,10 @@
 			// Otherwise default to keyboard hidden
 			[self.contentTextView resignFirstResponder];
 		}
-		
-		self.contentTextView.text = self.note.content;
+        NSURL *url = [NSURL fileURLWithPath:[[[NSBundle mainBundle] resourcePath] stringByAppendingFormat:@"/html/%@", self.note.title]];
+        NSLog(@"URL for loading: %@", url);
+        [self.contentTextView loadRequest:[NSURLRequest requestWithURL:url]];
+
 	}
 	else {
 		contentTextView.hidden = YES;
@@ -227,7 +229,7 @@
 
 - (void)clear {
 	self.note = nil;
-	self.contentTextView.text = nil;
+    [self.contentTextView loadHTMLString:@"<html></html>" baseURL:[NSURL fileURLWithPath:@"/"]];
 	
 	[self.contentTextView resignFirstResponder];
 }
@@ -350,7 +352,6 @@
 #pragma mark UITextViewDelegate methods
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
-	DLog(@"replacementText: \"%@\"", text);
 	
 	// Cancel any pending delayed saves.
 	[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(saveNote) object:nil];
@@ -523,7 +524,7 @@
 	[ipadToolbar release];
 	[note release];
 	[splitViewPopoverController release];
-	
+
     [super dealloc];
 }
 

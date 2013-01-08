@@ -1,0 +1,117 @@
+/*
+
+Copyright c 2012 Xyleme, Inc., 2060 Broadway, Suite 260, Boulder, C0 80302 USA.
+All rights reserved.
+
+This file and related documentation are protected by copyright and
+are distributed under licenses regarding their use, copying, distribution,
+and decompilation. No part of this product or related documentation may
+be reproduced or transmitted in any form or by any means, electronic or
+mechanical, for any purpose, without the express written permission of
+Xyleme, Inc.
+
+*/
+
+/*--------------------------------*/
+/* Matrix begin ----------*/
+
+DIV.Matrix {
+	width: 600px;
+}
+DIV.Matrix OL {
+	padding-bottom: 20px;
+	list-style-type: none;
+}
+DIV.Matrix OL LI {
+	margin-left: -40px;
+}
+DIV.Matrix DIV.ListType LI {
+	margin-left: 0px;
+}
+DIV.Matrix DIV.Headers{
+	padding: 0px 0px 0px 0px;
+	text-align: center;
+}
+DIV.Matrix DIV.headTitle {
+	font-size: 18px;
+
+}
+DIV.Matrix DIV.Headers DIV.Usual {
+	clear: both;
+}
+DIV.Matrix DIV.Headers DIV.Col1 {
+	float: left;
+	width: 325px;
+	vertical-align: middle;
+}
+DIV.Matrix DIV.Option {
+	float:left;
+	width:100%;
+	border-top: 3px solid #ffffff;
+	vertical-align: middle;
+}
+DIV.Matrix DIV.Option TABLE {
+	border-collapse: collapse;
+}
+DIV.Matrix DIV.Option TABLE TD {
+	/*border-left: 3px solid #ffffff;*/
+}
+DIV.Matrix DIV.Option TABLE TD.DistractorCell {
+	border-left: 0px;
+}
+DIV.Matrix DIV.Option DIV.Light {
+	float:left;
+	width:100%;
+	vertical-align: middle;
+}
+DIV.Matrix DIV.Option DIV.Dark {
+	width:100%;
+	float:left;
+	vertical-align: middle;
+}
+DIV.Matrix DIV.Option DIV.Col1 {
+	float: left;
+	width: 29px;
+	vertical-align: middle;
+}
+DIV.Matrix DIV.Option DIV.Div2InnerWrapper {
+	vertical-align: middle;
+	height:100%; 
+}
+DIV.Matrix DIV.Option DIV.Div1InnerWrapper{
+	font-size: 18px;
+	width:296px; 
+	height:100%;
+	float:left; 
+	text-align:left; 
+}
+DIV.Matrix DIV.Option DIV.Col2 {
+    margin-left: 80px;
+	width: 510px;
+	color: #000031;
+}
+DIV.Matrix DIV.Option DIV.Col2 DIV.Col2Light {
+	background-color: #efefef;
+}
+DIV.Matrix DIV.Option DIV.Col2 DIV.Col2Dark {
+    background-color: #e7e7e7;
+}
+DIV.Matrix DIV.Option INPUT {
+	text-align: center;
+	vertical-align: middle;
+}
+DIV.Matrix DIV.Option DIV.Feedback {
+	font-weight: bold;
+}
+DIV.Matrix DIV.NotQuite {
+	font-style: italic;
+	font-weight: bold;
+	color: #3399FF;
+	background-color: inherit;
+	padding: 2px 0px 0px 0px;
+	visibility: hidden;
+	display: none;
+}
+
+/* Matrix end ----------*/
+/*---------------------------------*/

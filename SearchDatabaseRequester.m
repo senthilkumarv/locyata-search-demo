@@ -70,8 +70,10 @@
 	else {
 		[self.currentSearchRequest setSpellCorrectionMethod:LSLocaytaSearchRequestSpellCorrectionMethodNone];
 	}
-	
-	LSLocaytaSearchQuery *searchQuery = [LSLocaytaSearchQuery queryWithQueryString:trimmed];
+
+    LSLocaytaSearchQuery *searchQuery = [LSLocaytaSearchQuery queryWithQueryString:trimmed];
+    searchQuery.defaultOperator = LSLocaytaSearchQueryOperatorAnd;
+
 	self.currentSearchQuery = searchQuery;
 	
 	NSInteger docsPerPage = 20;

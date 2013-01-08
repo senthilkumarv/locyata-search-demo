@@ -1,0 +1,95 @@
+/*
+
+Copyright c 2012 Xyleme, Inc., 2060 Broadway, Suite 260, Boulder, C0 80302 USA.
+All rights reserved.
+
+This file and related documentation are protected by copyright and
+are distributed under licenses regarding their use, copying, distribution,
+and decompilation. No part of this product or related documentation may
+be reproduced or transmitted in any form or by any means, electronic or
+mechanical, for any purpose, without the express written permission of
+Xyleme, Inc.
+
+*/
+
+/*-----------------------------------*/
+/* WebMultipleChoice begin ----------*/
+
+DIV.WebMultipleChoice {
+	width: 590px;
+}
+fieldset {
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+DIV.WebMultipleChoice OL {
+	padding-bottom: 20px;
+	list-style-type: none;
+}
+DIV.WebMultipleChoice OL LI {
+	margin-left: -40px;
+}
+DIV.WebMultipleChoice DIV.ListType LI {
+	margin-left: 0px;
+}
+DIV.WebMultipleChoice DIV.Option DIV.Light {
+	clear: both;
+	min-height: 45px;
+}
+DIV.WebMultipleChoice DIV.Option DIV.Dark {
+	clear: both;
+	min-height: 45px;
+}
+DIV.WebMultipleChoice DIV.Option DIV.Col1 {
+	float: left;
+	width: 75px;
+	vertical-align: middle;
+}
+DIV.WebMultipleChoice DIV.Option DIV.Col1 DIV.Col1InnerWrapper {
+    margin: 10px 5px 0px 5px;
+}
+DIV.WebMultipleChoice DIV.Option DIV.Col2 {
+	border-left: 3px solid #FFFFFF;
+	font-size: 18px;
+	margin-left: 80px;
+	width: 506px;
+}
+DIV.WebMultipleChoice DIV.Option DIV.Col2ie6 {
+    margin-left: 87px;
+	font-size: 18pt;
+	width: 506px;
+	color: #0088C2;
+}
+DIV.WebMultipleChoice DIV.Option DIV.Col2 DIV.Col2Light {
+	background-color: #cceaf5;
+	min-height: 45px;
+}
+
+DIV.WebMultipleChoice DIV.Option DIV.Col2 DIV.Col2Light_IE6 {
+	background-color: #cceaf5;
+	min-height: 45px;
+	height: 45px;
+}
+DIV.WebMultipleChoice DIV.Option DIV.Col2 DIV.Col2Dark_IE6{
+    background-color: #99d5ef;
+	min-height: 45px;
+	height: 45px;
+}
+DIV.WebMultipleChoice DIV.Option DIV.Col2 DIV.Col2Dark {
+    background-color: #99d5ef;
+	min-height: 45px;
+}
+DIV.WebMultipleChoice DIV.Option DIV.Col2 DIV.Col2InnerWrapper {
+    padding: 10px 5px 5px 8px;
+}
+DIV.WebMultipleChoice DIV.Option INPUT {
+	vertical-align: top;
+	/*margin-right: 15px;*/
+}
+DIV.WebMultipleChoice DIV.Option DIV.Feedback {
+	width: 380px;
+}
+
+/* WebMultipleChoice end ----------*/
+/*---------------------------------*/

@@ -33,7 +33,7 @@
 @interface EditNoteViewController : UIViewController <UISplitViewControllerDelegate, UITextViewDelegate, MFMailComposeViewControllerDelegate, UIPopoverControllerDelegate, UIActionSheetDelegate> {
 	Note					*note;
 	
-	UITextView				*contentTextView;
+	UIWebView				*contentTextView;
 	UIPopoverController		*currentPopoverController;
 	UIToolbar				*ipadToolbar;
 	UIPopoverController		*splitViewPopoverController;
@@ -44,7 +44,7 @@
 
 @property (nonatomic, retain)	Note					*note;
 
-@property (nonatomic, retain)	IBOutlet	UITextView				*contentTextView;
+@property (nonatomic, retain)	IBOutlet	UIWebView				*contentTextView;
 @property (nonatomic, retain)				UIPopoverController		*currentPopoverController;
 @property (nonatomic, retain)	IBOutlet	UIToolbar				*ipadToolbar;
 @property (nonatomic, retain)				UIPopoverController		*splitViewPopoverController;

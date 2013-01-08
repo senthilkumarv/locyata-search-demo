@@ -1,0 +1,94 @@
+/*
+
+Copyright c 2012 Xyleme, Inc., 2060 Broadway, Suite 260, Boulder, C0 80302 USA.
+All rights reserved.
+
+This file and related documentation are protected by copyright and
+are distributed under licenses regarding their use, copying, distribution,
+and decompilation. No part of this product or related documentation may
+be reproduced or transmitted in any form or by any means, electronic or
+mechanical, for any purpose, without the express written permission of
+Xyleme, Inc.
+
+*/
+
+/*-------------------------------------*/
+/* WebSequenceActivity begin ----------*/
+
+DIV.WebSequenceActivity {
+	width: 600px;
+}
+DIV.WebSequenceActivity OL {
+	list-style-type: none;
+	padding:0 0 20px 0;
+	
+}
+DIV.SequenceActivity DIV.SequenceStep {
+	padding: 0px 0px 0px 0px;
+	border-top: 3px solid #ffffff;
+}
+DIV.SequenceStep DIV.Dark {
+	clear: both;
+    min-height: 45px;
+	padding: 0px;
+}
+DIV.SequenceStep DIV.Dark DIV.Select {
+	float: left;
+	width: 22%;
+}
+DIV.SequenceStep DIV.Dark DIV.Select DIV.SelectWrapper {
+	padding-top: 15px;
+}
+DIV.SequenceStep DIV.Dark DIV.Distractor {
+	border-left: 3px solid #ffffff;
+	font-size: 18px;
+	margin-left: 90px;
+	width: 76%;
+	min-height: 45px;
+}
+DIV.SequenceStep DIV.Dark DIV.Distractor DIV.DistractorWrapper {
+	padding: 10px 5px 5px 8px;
+}
+DIV.SequenceStep DIV.Light {
+	clear: both;
+    min-height: 45px;
+	padding: 0px;
+}
+DIV.SequenceStep DIV.Light DIV.Select {
+	float: left;
+	width: 22%;
+}
+DIV.SequenceStep DIV.Light DIV.Select DIV.SelectWrapper {
+	padding-top: 15px;
+}
+DIV.SequenceStep DIV.Light DIV.Distractor {
+	border-left: 3px solid #ffffff;
+	font-size: 18px;
+	margin-left: 90px;
+	width: 76%;
+	min-height: 45px;
+}
+DIV.SequenceStep DIV.Light DIV.Distractor DIV.DistractorWrapper {
+	padding: 10px 5px 5px 8px;
+}
+DIV.SequenceStep DIV.Select SELECT {
+	width: 50px;
+	vertical-align: top;
+}
+DIV.WebSequenceActivity DIV.PositiveFeedback {
+	color: #1595ec;
+}
+DIV.WebSequenceActivity DIV.NegativeFeedback {
+	color: #f2105a;
+}
+DIV.WebSequenceActivity DIV.ThisIsCorrResponse {
+	color: #12cb9f;
+}
+DIV.WebSequenceActivity DIV.QuestionFeedback DIV.Col2 {
+	width: 80%;
+}
+DIV.WebSequenceActivity DIV.QuestionFeedback DIV.IncorrResponse {
+	color: #f2105a;
+}
+
+/* WebSequenceActivity end ----------*/

@@ -1,0 +1,55 @@
+/*
+
+Copyright c 2012 Xyleme, Inc., 2060 Broadway, Suite 260, Boulder, C0 80302 USA.
+All rights reserved.
+
+This file and related documentation are protected by copyright and
+are distributed under licenses regarding their use, copying, distribution,
+and decompilation. No part of this product or related documentation may
+be reproduced or transmitted in any form or by any means, electronic or
+mechanical, for any purpose, without the express written permission of
+Xyleme, Inc.
+
+*/
+
+/*-----------------------------------*/
+/* EssayActivity begin ----------*/
+
+DIV.EssayActivity DIV.QuestionStem {
+	width: 95%;
+	margin-bottom: 7px;
+}
+DIV.EssayActivity OL {
+	list-style-type: none;
+	padding-bottom: 20px;
+}
+DIV.EssayActivity DIV.Option {
+	width: 95%;
+	padding-left: 15px;
+}
+DIV.EssayActivity DIV.Controls INPUT {
+	background-image: url(RS:paste.gif); 
+	background-color: #dedbd6; 
+	width: 58px; 
+	background-repeat: no-repeat; 
+	font-family: Tahoma; 
+	background-position: right center; 
+	height: 24px; 
+	font-size: 8pt;
+}
+
+DIV.EssayActivity TEXTAREA {
+	border-bottom: gray thin solid; 
+	border-left: gray thin solid;
+	width: 70%; 
+	background-repeat: repeat; 
+	font-family: Arial; 
+	height: 130pt; 
+	color: black; 
+	font-size: 11pt;
+	border-top: gray thin solid; 
+	border-right: gray thin solid
+}
+
+/* EssayActivity end ----------*/
+/*---------------------------------*/

@@ -1,0 +1,41 @@
+/*
+
+Copyright c 2012 Xyleme, Inc., 2060 Broadway, Suite 260, Boulder, C0 80302 USA.
+All rights reserved.
+
+This file and related documentation are protected by copyright and
+are distributed under licenses regarding their use, copying, distribution,
+and decompilation. No part of this product or related documentation may
+be reproduced or transmitted in any form or by any means, electronic or
+mechanical, for any purpose, without the express written permission of
+Xyleme, Inc.
+
+*/
+/*-----------------------------------*/
+/* Ledger begin ----------*/
+
+DIV.Ledger {
+}
+
+DIV.Ledger DIV.Advice{
+	font-style: italic;
+	font-weight: bold;
+	padding: 2px 0px 0px 0px;
+	visibility: hidden;
+	display: none; 
+	clear: both;
+}
+DIV.Ledger DIV.DebitCredit{
+	font-style: italic;
+	font-weight: bold;
+	padding: 2px 0px 0px 0px;
+	visibility: hidden;
+	display: none; 
+	clear: both;
+}
+DIV.Ledger DIV.Advice DIV{
+	margin-left: 10px;
+}
+
+/* Ledger end ----------*/
+/*-----------------------------------*/

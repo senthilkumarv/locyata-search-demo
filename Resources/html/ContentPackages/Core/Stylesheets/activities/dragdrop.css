@@ -1,0 +1,34 @@
+/*
+
+Copyright c 2012 Xyleme, Inc., 2060 Broadway, Suite 260, Boulder, C0 80302 USA.
+All rights reserved.
+
+This file and related documentation are protected by copyright and
+are distributed under licenses regarding their use, copying, distribution,
+and decompilation. No part of this product or related documentation may
+be reproduced or transmitted in any form or by any means, electronic or
+mechanical, for any purpose, without the express written permission of
+Xyleme, Inc.
+
+*/
+
+/*-----------------------------------*/
+/* WebDragDropActivity begin ----------*/
+
+DIV.WebDragDrop OL {
+	padding-bottom: 20px;
+	list-style-type: none;
+}
+DIV.WebDragDrop OL LI {
+	margin-left: -40px;
+}
+
+DIV.WebDragDrop IMG{
+	display: block;
+}
+DIV.WebDragDrop {
+	position:relative;
+} 
+
+/* WebDragDropActivity end ----------*/
+/*-----------------------------------*/

@@ -1,0 +1,62 @@
+/*
+
+Copyright c 2012 Xyleme, Inc., 2060 Broadway, Suite 260, Boulder, C0 80302 USA.
+All rights reserved.
+
+This file and related documentation are protected by copyright and
+are distributed under licenses regarding their use, copying, distribution,
+and decompilation. No part of this product or related documentation may
+be reproduced or transmitted in any form or by any means, electronic or
+mechanical, for any purpose, without the express written permission of
+Xyleme, Inc.
+
+*/
+
+
+
+BODY {
+    font-family: Calibri, sans-serif;
+    font-size: 11pt;
+	color: #000000;
+}
+
+.PageType {
+}
+.Page {    
+}
+DIV.PageType_Title {
+    font-family: Georgia, serif;
+    font-size: 18pt;
+    font-weight: bold;
+    margin-bottom: 15px;
+    position: relative;
+    /* left: -135px; */
+    color: #333333;
+}
+DIV.TableType_Title {
+	font-size: 10pt;
+	font-weight: bold;
+	text-align: left;
+    color:#B19A3C;
+	background-color: inherit;
+	padding: 10px 5px 10px 5px;
+}
+.ListType {
+    font-family:"Times New Roman", Times, serif;
+	font-size: 12pt;	
+	text-decoration: none;
+	color: #134D86;
+	background-color: inherit;
+	margin-left: inherit;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding: 0px;
+}
+.ListType UL.Bullet {
+	list-style-image: url(../Transforms/media/BulletSquareSmall.png);
+}
+TABLE.CustomNote TD.AreaContent {
+       vertical-align: top;
+       padding: 5px 8px 5px 8px;
+       background-color: #D1E3F3;
+}

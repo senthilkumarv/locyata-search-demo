@@ -1,0 +1,44 @@
+/*
+
+Copyright c 2012 Xyleme, Inc., 2060 Broadway, Suite 260, Boulder, C0 80302 USA.
+All rights reserved.
+
+This file and related documentation are protected by copyright and
+are distributed under licenses regarding their use, copying, distribution,
+and decompilation. No part of this product or related documentation may
+be reproduced or transmitted in any form or by any means, electronic or
+mechanical, for any purpose, without the express written permission of
+Xyleme, Inc.
+
+*/
+
+
+
+BODY {
+    color: #000031; 
+    background-color: #FFFFFF;
+    text-align: left;
+	font-size: 10pt;
+}
+
+DIV.ClosedType {
+    background-color: #000000;
+    border:1px solid #FFFFFF;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 16px;
+    height: 20px;
+    cursor: pointer;
+}
+
+DIV.TypeContent {
+    display: none;
+    overflow-y: hidden; 
+    position: relative;
+}
+
+DIV.ResourceItem {
+    font-size: 14px;
+    padding: 2px;
+    cursor: pointer;
+}

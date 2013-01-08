@@ -1,0 +1,135 @@
+/*
+
+Copyright c 2012 Xyleme, Inc., 2060 Broadway, Suite 260, Boulder, C0 80302 USA.
+All rights reserved.
+
+This file and related documentation are protected by copyright and
+are distributed under licenses regarding their use, copying, distribution,
+and decompilation. No part of this product or related documentation may
+be reproduced or transmitted in any form or by any means, electronic or
+mechanical, for any purpose, without the express written permission of
+Xyleme, Inc.
+
+*/
+
+/*--------------------------------*/
+/* WebFillInBlank begin ----------*/
+
+DIV.WebFillInBlank {
+	/*border-left: 1px solid #999999;
+	border-bottom: 1px solid #999999;*/
+	width: 590px;
+	position: relative;
+}
+DIV.WebFillInBlank OL {
+	list-style-type: none;
+	padding-bottom: 20px;
+}
+DIV.WebFillInBlank OL LI {
+	padding-top: 1px;
+}
+DIV.FillInContent {
+	clear: both;
+	margin-top: 15px;
+}
+DIV.FillInContent SPAN.Text {
+	padding: 4px 2px 2px 0px;
+}
+DIV.FillInContent SPAN.BlankInput {
+	padding: 0px 3px 0px 3px;
+}
+DIV.FillInContent SELECT.DropDownList{
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: 2px;
+	margin-top: 0px;
+	min-width: 156px;
+	font-weight: bold;
+}
+DIV.FillInContent SELECT.DropDownList OPTION.DropDownOption {
+	min-width: 90px;
+	font-weight: bold;
+}
+DIV.FillInContent SPAN.BlankInput INPUT {
+	font-weight: bold;
+	padding: 0px 2px 0px 3px;
+	vertical-align: middle;
+}
+DIV.FillInContent SPAN.BlankInput IMG {
+	display: none;
+	visibility: hidden;
+	border: none;
+}
+
+DIV.FillInContent DIV.FeedbackSection {
+	/* display: none; */
+	clear: both;
+	padding: 5px 0px 0px 0px;
+	width: 80%;
+}
+DIV.FillInContent DIV.FeedbackSection DIV.UserResponse {
+	width: 50%;
+	font-weight: bold;
+	visibility: hidden;
+	display: none;
+	float: left;
+}
+DIV.FillInContent DIV.FeedbackSection DIV.FeedbackResponse {
+	float: left;
+}
+DIV.FillInContent DIV.FeedbackSection SPAN.CorrResponse {
+	font-style: italic;
+	font-weight: bold;
+	color: #1595ec;
+	padding: 0px;
+	visibility: hidden;
+	display: none;
+}
+DIV.FillInContent DIV.FeedbackSection SPAN.IncorrResponse {
+	font-style: italic;
+	font-weight: bold;
+	color: #f2105a;
+	padding: 0px;
+	visibility: hidden;
+	display: none;
+}
+DIV.FillInContent DIV.FeedbackSection SPAN.PositiveFb,SPAN.NegativeFb {
+	font-style: italic;
+	padding: 0px 100px 0px 0px;
+	visibility: hidden;
+	display: none;
+}
+DIV.FillInContent DIV.FeedbackSection SPAN.ThisIsCorrResponse {
+	font-style: italic;
+	font-weight: bold;
+	color: #12cb9f;
+	padding: 0px;
+	visibility: hidden;
+	display: none;
+}
+
+DIV.WebFillInBlank DIV.Hint {
+	clear: both;
+	font-style: italic;
+	padding: 10px 0px 0px 0px;
+	visibility: hidden;
+	display: none;
+}
+DIV.WebFillInBlank DIV.Hint SPAN {
+	font-weight: bold;
+}
+
+DIV.FillInContent DIV.QuestionFeedback {
+	clear: both;
+	padding: 15px 0px 0px 0px;
+}
+DIV.FillInContent DIV.QuestionFeedback DIV.Col1 {
+	float: left;
+	width: 29px;
+}
+DIV.FillInContent DIV.QuestionFeedback DIV.Col2 {
+	float: left;
+	width: 80%;
+}
+/* WebFillInBlank end ----------*/
+/*------------------------------*/

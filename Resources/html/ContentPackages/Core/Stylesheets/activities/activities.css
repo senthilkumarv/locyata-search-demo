@@ -1,0 +1,210 @@
+/*
+
+Copyright c 2012 Xyleme, Inc., 2060 Broadway, Suite 260, Boulder, C0 80302 USA.
+All rights reserved.
+
+This file and related documentation are protected by copyright and
+are distributed under licenses regarding their use, copying, distribution,
+and decompilation. No part of this product or related documentation may
+be reproduced or transmitted in any form or by any means, electronic or
+mechanical, for any purpose, without the express written permission of
+Xyleme, Inc.
+
+*/
+
+/* -- common for all question types */
+
+.QuestionBlockType {
+    width: 640px;
+    margin: 6px 0px 6px 0px;
+	text-align: left;
+}
+DIV.QuestionBlockType_Title {
+	font-size: 16px;
+	font-weight: bold;
+	font-style: italic;
+	color: #999999;
+	background-color: inherit;
+	padding: 12px 0px 2px 0px;
+	position: relative;
+}
+SPAN.OptionIcon {
+	width: 29px;
+}
+SPAN.FeedbackIcon {
+	width: 29px;
+	display: none;
+	visibility: hidden;
+}
+IMG.FeedbackIcon {
+	display: none;
+	visibility: hidden;
+	vertical-align: middle;
+	padding: 2px 5px 0px 10px;
+}
+DIV.QuestionStem {
+	color: #FFFFFF;
+	font-size: 18px;
+	padding: 8px 0px 8px 0px;
+	height:auto !important;
+	margin-bottom: 1px;
+	color: #ffffff;
+	background: #005D84;
+}
+DIV.QuestionStem DIV.QuestionStemInnerWrapper {
+        margin: 0px 5px 0px 10px;
+}
+DIV.QuestionStem DIV.QuestionStemInnerWrapper DIV {
+	margin-left: 0px;
+}
+DIV.Option {
+	padding: 0px 0px 0px 0px;
+	border-top: 3px solid #ffffff;
+}
+DIV.Light {
+	background-color: #cceaf5;
+}
+DIV.Dark {
+    background-color: #99d5ef;
+}
+DIV.Feedback {
+	font-style: italic;
+	padding: 0px 0px 0px 0px;
+	visibility: hidden;
+	display: none;
+	clear: both;
+}
+DIV.CorrResponse {
+	font-style: italic;
+	font-weight: bold;
+	color: #18386b;
+	background-color: inherit;
+	padding: 2px 0px 0px 0px;
+	visibility: hidden;
+	display: none;
+}
+DIV.IncorrResponse {
+	font-style: italic;
+	font-weight: bold;
+	color: #9c0031;
+	background-color: inherit;
+	padding: 2px 0px 0px 0px;
+	visibility: hidden;
+	display: none;
+}
+DIV.ThisIsCorrResponse {
+	font-style: italic;
+	font-weight: bold;
+	color: #9fc0f2;
+	background-color: inherit;
+	padding: 2px 0px 0px 0px;
+	visibility: hidden;
+	display: none;
+}
+DIV.QuestionFeedback {
+	clear: both;
+	padding: 15px 0px 0px 0px;
+}
+DIV.Feedback {
+	font-style: italic;
+	font-weight: bold;
+	padding: 0px 0px 0px 0px;
+	visibility: hidden;
+	display: none;
+	clear: both;
+}
+DIV.QuestionFeedback DIV.Col1 {
+	float: left;
+	width: 29px;
+}
+DIV.QuestionFeedback DIV.Col2 {
+	float: left;
+}
+DIV.PositiveFeedback {
+	font-style: italic;
+	font-weight: bold;
+	color: #18386b;
+	padding: 2px 0px 0px 0px;
+	visibility: hidden;
+	display: none; 
+	clear: both;
+}
+DIV.NegativeFeedback {
+	font-style: italic;
+	font-weight: bold;
+	color: #9c0031;
+	padding: 2px 0px 0px 0px;
+	visibility: hidden;
+	display: none; 
+	clear: both;
+}
+DIV.QuestionFeedback DIV.IncorrResponse {
+	font-style: italic;
+	font-weight: bold;
+	color: #9c0031;
+	padding: 0px;
+	visibility: hidden;
+	display: none;
+	clear: both;
+}
+DIV.Advice{
+	font-style: italic;
+	font-weight: bold;
+	padding: 2px 0px 0px 0px;
+	visibility: hidden;
+	display: none; 
+	clear: both;
+}
+DIV.Advice DIV{
+	margin-left: 10px;
+}
+DIV.Hint {
+	font-style: italic;
+	padding: 10px 0px 0px 0px;
+	visibility: hidden;
+	display: none;
+	clear: both;
+}
+DIV.Hint SPAN {
+	font-weight: bold;
+}
+
+DIV.Submit{
+	padding: 20px 0px 10px 30px;
+	font-weight: bold;
+	clear: both;
+}
+DIV.Submit INPUT {
+	color: #000000;
+	border: none;
+	height: 28px;
+	width: 87px;
+	background: url(../../../media/Core/submit_background.png) left top no-repeat;
+}
+DIV.Submit SPAN {
+	padding-left: 8px;
+	font-size: 11px;
+	font-weight: bold;
+}
+DIV.popup {
+   width: 270px;
+   visibility: hidden;
+   color: #ffffff;
+   background-color: #18386b;
+   padding: 5px 0px 5px 0px;
+   margin: 0px;
+   font-size: 13px;   
+   text-align: center;
+   font-weight: normal;
+} 
+DIV.popup SPAN {
+   font-weight: bold;
+}
+DIV.WebDragDrop DIV.TryAgain {
+	font-weight: bold;
+	color: #000000;
+	padding: 2px 0px 0px 0px;
+	visibility: hidden;
+	display: none;
+	clear: both;
+}
